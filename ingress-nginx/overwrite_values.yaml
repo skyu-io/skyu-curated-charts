@@ -5,8 +5,22 @@ repository:
   sourcerefname: "ingress-nginx"
   url: "https://kubernetes.github.io/ingress-nginx"
 valuesfrom:
-  - overwritepath: ""
-    defaultvalue: ""
-    values: ""
+  - overwritepath: "controller.replicaCount"
+    defaultvalue: "1"
+    values: "2"
+    description: "No of Replicas"
+  - overwritepath: "rbac.create"
+    defaultvalue: "true"
+    values: "false"   
+    description: "If Cluster isn't Kubernetes role-based access control enabled"
+  - overwritepath: "controller.resources.requests.cpu"
+    defaultvalue: "100m"
+    values: "100m" 
+    description: "CPU"
+  - overwritepath: "controller.resources.requests.memory"
+    defaultvalue: "90Mi"
+    values: "90Mi"   
+    description: "MEMORY"    
+                           
   
   

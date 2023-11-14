@@ -5,8 +5,8 @@ repository:
   sourcerefname: "cert-manager"
   url: "https://charts.jetstack.io"
 valuesfrom:
-  - overwritepath: ""
-    defaultvalue: ""
-    values: ""
+  - overwritepath: "replicaCount"
+    defaultvalue: "1"
+    values: "1"
   
   
