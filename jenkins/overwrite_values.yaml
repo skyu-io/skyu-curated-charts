@@ -1,0 +1,15 @@
+name: "jenkins"
+version: "4.8.2"
+description: "Jenkins - Build great things at any scale! The leading open source automation server, Jenkins provides over 1800 plugins to support building, deploying and automating any project."
+repository:
+  sourcerefname: "jenkinsci"
+  url: "https://charts.jenkins.io/"
+valuesfrom:
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+
+  

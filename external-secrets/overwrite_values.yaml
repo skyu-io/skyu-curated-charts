@@ -1,0 +1,14 @@
+name: "external-secrets"
+version: "0.9.8"
+description: "External secret management for Kubernetes"
+repository:
+  sourcerefname: "external-secrets-operator"
+  url: "https://charts.external-secrets.io/"
+valuesfrom:
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+ 

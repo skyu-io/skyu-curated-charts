@@ -1,0 +1,15 @@
+name: "kafka"
+version: "26.4.0"
+description: "Apache Kafka is a distributed streaming platform designed to build real-time pipelines and can be used as a message broker or as a replacement for a log aggregation solution for big data applications."
+repository:
+  sourcerefname: "bitnami"
+  url: "https://charts.bitnami.com/bitnami"
+valuesfrom:
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+ 
+  

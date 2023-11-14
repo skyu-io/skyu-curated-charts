@@ -1,0 +1,14 @@
+name: "traefik"
+version: "25.0.0"
+description: "A Traefik based Kubernetes ingress controller"
+repository:
+  sourcerefname: "traefik"
+  url: "https://traefik.github.io/charts"
+valuesfrom:
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+ 

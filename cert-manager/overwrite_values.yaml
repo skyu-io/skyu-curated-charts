@@ -1,0 +1,12 @@
+name: "cert-manager"
+version: "1.13.2"
+description: "A Helm chart for cert-manager"
+repository:
+  sourcerefname: "cert-manager"
+  url: "https://charts.jetstack.io"
+valuesfrom:
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+  
+  

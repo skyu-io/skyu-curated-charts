@@ -1,0 +1,215 @@
+{
+    "affinity": {},
+    "annotations": {},
+    "args": [
+        "--workdir=/fluent-bit/etc",
+        "--config=/fluent-bit/etc/conf/fluent-bit.conf"
+    ],
+    "autoscaling": {
+        "behavior": {},
+        "customRules": [],
+        "enabled": false,
+        "maxReplicas": 3,
+        "minReplicas": 1,
+        "targetCPUUtilizationPercentage": 75,
+        "vpa": {
+            "annotations": {},
+            "controlledResources": [],
+            "enabled": false,
+            "maxAllowed": {},
+            "minAllowed": {},
+            "updatePolicy": {
+                "updateMode": "Auto"
+            }
+        }
+    },
+    "command": [
+        "/fluent-bit/bin/fluent-bit"
+    ],
+    "config": {
+        "customParsers": "[PARSER]\n    Name docker_no_time\n    Format json\n    Time_Keep Off\n    Time_Key time\n    Time_Format %Y-%m-%dT%H:%M:%S.%L\n",
+        "extraFiles": {},
+        "filters": "[FILTER]\n    Name kubernetes\n    Match kube.*\n    Merge_Log On\n    Keep_Log Off\n    K8S-Logging.Parser On\n    K8S-Logging.Exclude On\n",
+        "inputs": "[INPUT]\n    Name tail\n    Path /var/log/containers/*.log\n    multiline.parser docker, cri\n    Tag kube.*\n    Mem_Buf_Limit 5MB\n    Skip_Long_Lines On\n\n[INPUT]\n    Name systemd\n    Tag host.*\n    Systemd_Filter _SYSTEMD_UNIT=kubelet.service\n    Read_From_Tail On\n",
+        "outputs": "[OUTPUT]\n    Name es\n    Match kube.*\n    Host elasticsearch-master\n    Logstash_Format On\n    Retry_Limit False\n\n[OUTPUT]\n    Name es\n    Match host.*\n    Host elasticsearch-master\n    Logstash_Format On\n    Logstash_Prefix node\n    Retry_Limit False\n",
+        "service": "[SERVICE]\n    Daemon Off\n    Flush {{ .Values.flush }}\n    Log_Level {{ .Values.logLevel }}\n    Parsers_File /fluent-bit/etc/parsers.conf\n    Parsers_File /fluent-bit/etc/conf/custom_parsers.conf\n    HTTP_Server On\n    HTTP_Listen 0.0.0.0\n    HTTP_Port {{ .Values.metricsPort }}\n    Health_Check On\n",
+        "upstream": {}
+    },
+    "daemonSetVolumeMounts": [
+        {
+            "mountPath": "/var/log",
+            "name": "varlog"
+        },
+        {
+            "mountPath": "/var/lib/docker/containers",
+            "name": "varlibdockercontainers",
+            "readOnly": true
+        },
+        {
+            "mountPath": "/etc/machine-id",
+            "name": "etcmachineid",
+            "readOnly": true
+        }
+    ],
+    "daemonSetVolumes": [
+        {
+            "hostPath": {
+                "path": "/var/log"
+            },
+            "name": "varlog"
+        },
+        {
+            "hostPath": {
+                "path": "/var/lib/docker/containers"
+            },
+            "name": "varlibdockercontainers"
+        },
+        {
+            "hostPath": {
+                "path": "/etc/machine-id",
+                "type": "File"
+            },
+            "name": "etcmachineid"
+        }
+    ],
+    "dashboards": {
+        "annotations": {},
+        "enabled": false,
+        "labelKey": "grafana_dashboard",
+        "labelValue": 1,
+        "namespace": ""
+    },
+    "dnsConfig": {},
+    "dnsPolicy": "ClusterFirst",
+    "env": [],
+    "envFrom": [],
+    "envWithTpl": [],
+    "existingConfigMap": "",
+    "extraContainers": [],
+    "extraPorts": [],
+    "extraVolumeMounts": [],
+    "extraVolumes": [],
+    "flush": 1,
+    "fullnameOverride": "",
+    "hostAliases": [],
+    "hostNetwork": false,
+    "hotReload": {
+        "enabled": false,
+        "image": {
+            "digest": null,
+            "pullPolicy": "IfNotPresent",
+            "repository": "ghcr.io/jimmidyson/configmap-reload",
+            "tag": "v0.11.1"
+        },
+        "resources": {}
+    },
+    "image": {
+        "digest": null,
+        "pullPolicy": "Always",
+        "repository": "cr.fluentbit.io/fluent/fluent-bit",
+        "tag": null
+    },
+    "imagePullSecrets": [],
+    "ingress": {
+        "annotations": {},
+        "enabled": false,
+        "extraHosts": [],
+        "hosts": [],
+        "ingressClassName": "",
+        "tls": []
+    },
+    "initContainers": [],
+    "kind": "DaemonSet",
+    "labels": {},
+    "lifecycle": {},
+    "livenessProbe": {
+        "httpGet": {
+            "path": "/",
+            "port": "http"
+        }
+    },
+    "logLevel": "info",
+    "luaScripts": {},
+    "metricsPort": 2020,
+    "minReadySeconds": null,
+    "nameOverride": "",
+    "networkPolicy": {
+        "enabled": false
+    },
+    "nodeSelector": {},
+    "openShift": {
+        "enabled": false,
+        "securityContextConstraints": {
+            "annotations": {},
+            "create": true,
+            "existingName": "",
+            "name": ""
+        }
+    },
+    "podAnnotations": {},
+    "podDisruptionBudget": {
+        "annotations": {},
+        "enabled": false,
+        "maxUnavailable": "30%"
+    },
+    "podLabels": {},
+    "podSecurityContext": {},
+    "podSecurityPolicy": {
+        "annotations": {},
+        "create": false
+    },
+    "priorityClassName": "",
+    "prometheusRule": {
+        "enabled": false
+    },
+    "rbac": {
+        "create": true,
+        "eventsAccess": false,
+        "nodeAccess": false
+    },
+    "readinessProbe": {
+        "httpGet": {
+            "path": "/api/v1/health",
+            "port": "http"
+        }
+    },
+    "replicaCount": 1,
+    "resources": {},
+    "securityContext": {},
+    "service": {
+        "annotations": {},
+        "labels": {},
+        "loadBalancerClass": null,
+        "loadBalancerSourceRanges": [],
+        "port": 2020,
+        "type": "ClusterIP"
+    },
+    "serviceAccount": {
+        "annotations": {},
+        "create": true,
+        "name": null
+    },
+    "serviceMonitor": {
+        "additionalEndpoints": [],
+        "enabled": false
+    },
+    "terminationGracePeriodSeconds": null,
+    "testFramework": {
+        "enabled": true,
+        "image": {
+            "digest": null,
+            "pullPolicy": "Always",
+            "repository": "busybox",
+            "tag": "latest"
+        },
+        "namespace": null
+    },
+    "tolerations": [],
+    "updateStrategy": {},
+    "volumeMounts": [
+        {
+            "mountPath": "/fluent-bit/etc/conf",
+            "name": "config"
+        }
+    ]
+}

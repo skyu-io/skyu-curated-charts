@@ -1,0 +1,23 @@
+name: "argo-cd"
+version: "5.51.0"
+description: "A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool for Kubernetes."
+repository:
+  sourcerefname: "argo"
+  url: "https://argoproj.github.io/argo-helm"
+valuesfrom:
+  - overwritepath: "applicationSet.replicas"
+    defaultvalue: "1"
+    values: "1"
+  - overwritepath: "service.type"
+    defaultvalue: "ClusterIP"
+    values: "ClusterIP"
+  - overwritepath: "service.servicePortHttp"
+    defaultvalue: "80"
+    values: "80"
+  - overwritepath: "service.servicePortHttps"
+    defaultvalue: "443"
+    values: "443"
+  - overwritepath: "service.servicePortHttps"
+    defaultvalue: "443"
+    values: "443"
+  

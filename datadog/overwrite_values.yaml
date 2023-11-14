@@ -1,0 +1,14 @@
+name: "datadog"
+version: "3.45.0"
+description: "Datadog Agent"
+repository:
+  sourcerefname: "datadog"
+  url: "https://helm.datadoghq.com"
+valuesfrom:
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+ 

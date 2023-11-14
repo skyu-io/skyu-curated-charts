@@ -1,0 +1,15 @@
+name: "rabbitmq"
+version: "12.4.1"
+description: "RabbitMQ is an open source general-purpose message broker that is designed for consistent, highly-available messaging scenarios (both synchronous and asynchronous)."
+repository:
+  sourcerefname: "bitnami"
+  url: "https://charts.bitnami.com/bitnami"
+valuesfrom:
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+  - overwritepath: ""
+    defaultvalue: ""
+    values: ""
+
+  
