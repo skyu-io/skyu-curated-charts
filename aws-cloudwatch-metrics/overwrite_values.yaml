@@ -11,7 +11,7 @@ valuesfrom:
     description: "Cluster Name"    
   - overwritepath: "resources.limits.cpu"
     defaultvalue: "200m"
-    values: ""
+    values: "200m"
     description: "CPU limit"  
   - overwritepath: "resources.limits.memory"
     defaultvalue: "200Mi"
@@ -19,11 +19,9 @@ valuesfrom:
     description: "Memory limit"    
   - overwritepath: "resources.requests.cpu"
     defaultvalue: "200m"
-    values: ""
+    values: "200m"
     description: "Requests CPU"  
   - overwritepath: "resources.requests.memory"
     defaultvalue: "200Mi"
     values: "200Mi"
     description: "Requests Memory"    
-  
-  
