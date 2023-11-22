@@ -6,22 +6,26 @@ repository:
   url: "https://aws.github.io/eks-charts"
 valuesfrom:
   - overwritepath: "clusterName"
-    defaultvalue: "cluster_name"
-    values: "cluster_name"
-    description: "Cluster Name"    
+    defaultvalue: ""
+    values: ""
+    description: "Cluster Name"   
+
   - overwritepath: "resources.limits.cpu"
     defaultvalue: "200m"
-    values: "200m"
+    values: ""
     description: "CPU limit"  
+
   - overwritepath: "resources.limits.memory"
     defaultvalue: "200Mi"
-    values: "200Mi"
+    values: ""
     description: "Memory limit"    
+
   - overwritepath: "resources.requests.cpu"
     defaultvalue: "200m"
-    values: "200m"
+    values: ""
     description: "Requests CPU"  
+
   - overwritepath: "resources.requests.memory"
     defaultvalue: "200Mi"
-    values: "200Mi"
+    values: ""
     description: "Requests Memory"    

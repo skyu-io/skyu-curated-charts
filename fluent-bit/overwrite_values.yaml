@@ -9,6 +9,7 @@ valuesfrom:
     defaultvalue: "3"
     values: "3"
     description: "Max Replicas while Auto Scaling"    
+    
   - overwritepath: "autoscaling.targetCPUUtilizationPercentage"
     defaultvalue: "75"
     values: "75"

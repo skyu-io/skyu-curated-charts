@@ -7,31 +7,66 @@ repository:
 valuesfrom:
   - overwritepath: "cloudWatch.enabled"
     defaultvalue: "false"
-    values: "false"
-    description: "CloudWatch enabling"    
+    values: ""
+    description: "CloudWatch enabling" 
+
   - overwritepath: "cloudWatch.endpoint"
     defaultvalue: null
-    values: null
-    description: "Specify a custom endpoint for the CloudWatch Logs API."  
+    values: ""
+    description: "Specify a custom endpoint for the CloudWatch Logs API." 
+
   - overwritepath: "cloudWatch.logFormat"
     defaultvalue: null
-    values: null
+    values: ""
     description: "An optional parameter that can be used to tell CloudWatch the format of the data. A value of json/emf enables CloudWatch to extract custom metrics embedded in a JSON payload"    
+  
   - overwritepath: "cloudWatch.logStreamName"
     defaultvalue: null
-    values: null
+    values: ""
     description: "The name of the CloudWatch Log Stream that you want log records sent to." 
+  
   - overwritepath: "cloudWatch.logGroupName"
     defaultvalue: "/aws/eks/fluentbit-cloudwatch/logs"
-    values: "/aws/eks/fluentbit-cloudwatch/logs"
+    values: ""
     description: "The name of the CloudWatch Log Group that you want log records sent to."    
+  
   - overwritepath: "cloudWatch.region"
     defaultvalue: "us-east-1"
-    values: "us-east-1"
+    values: ""
     description: "The AWS region." 
-  - overwritepath: null
-    values: null
-    description: "The AWS region." 
-  
-  
-  
+
+  - overwritepath: "resources.limits.memory"
+    defaultvalue: "250Mi"
+    values: ""
+    description: "Resource Limit Memory" 
+
+  - overwritepath: "resources.requests.cpu"
+    defaultvalue: "50m"
+    values: ""
+    description: "Resource Request CPU" 
+
+  - overwritepath: "resources.requests.memory"
+    defaultvalue: "50Mi"
+    values: ""
+    description: "Resource Request Memory" 
+
+  - overwritepath: "s3.enabled"
+    defaultvalue: "false"
+    values: ""
+    description: "s3 bucket" 
+
+  - overwritepath: "s3.endpoint"
+    defaultvalue: null
+    values: ""
+    description: "s3 Bucket Endpoint" 
+
+  - overwritepath: "s3.region"
+    defaultvalue: "us-east-1"
+    values: ""
+    description: "s3 Bucket Region" 
+
+  - overwritepath: "s3.roleArn"
+    defaultvalue: "false"
+    values: ""
+    description: "s3 Bucket Role Arn" 
+

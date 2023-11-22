@@ -8,27 +8,33 @@ valuesfrom:
   - overwritepath: "serviceAccounts.server.name"
     defaultvalue: ""
     values: "amp-iamproxy-ingest-service-account"
-    description: "Service Name"
+    description: "Service Account Name"
+
   - overwritepath: "serviceAccounts.server.annotations.eks.amazonaws.com/role-arn"
     defaultvalue: ""
     values: "${IAM_PROXY_PROMETHEUS_ROLE_ARN}"
     description: "IAM Proxy Prometheus Role Arn"
+
   - overwritepath: "server.remoteWrite.url"
     defaultvalue: ""
     values: "https://aps-workspaces.${REGION}.amazonaws.com/workspaces/${WORKSPACE_ID}/api/v1/remote_write"
     description: "Remote Write URL"
+
   - overwritepath: "server.remoteWrite.signv4.region"
     defaultvalue: ""
     values: "${REGION}"
     description: "Region"
+
   - overwritepath: "server.remoteWrite.queue_config.max_samples_per_send"
     defaultvalue: ""
     values: "1000"
     description: "Queue Config Max per Samples per Send"
+
   - overwritepath: "server.remoteWrite.queue_config.max_shards"
     defaultvalue: ""
     values: "200"
     description: "Queue Config Max Shards"
+
   - overwritepath: "server.remoteWrite.queue_config.capacity"
     defaultvalue: ""
     values: "2500"

@@ -9,14 +9,46 @@ valuesfrom:
     defaultvalue: "false"
     values: "true"
     description: "Metrics"
+
   - overwritepath: "controller.metrics.service.annotations."prometheus\.io/port"
     defaultvalue: ""
     values: "10254"   
     description: "Prometheus port number"
+
   - overwritepath: "controller.metrics.service.annotations."prometheus\.io/scrape"
     defaultvalue: ""
     values: "true" 
     description: "Prometheus scrape"
+
+  - overwritepath: "controller.service.type"
+    defaultvalue: "ClusterIP"
+    values: "" 
+    description: "Service Type"
+
+  - overwritepath: "controller.service.servicePort"
+    defaultvalue: "443"
+    values: "" 
+    description: "Service Port"
+
+  - overwritepath: "controller.ingressClassResource.default"
+    defaultvalue: "false"
+    values: "" 
+    description: "Ingress Class Resource
+
+  - overwritepath: "controller.replicaCount"
+    defaultvalue: "1"
+    values: "" 
+    description: "Replica Count"
+
+  - overwritepath: "controller.resources.requests.cpu"
+    defaultvalue: "100m"
+    values: "" 
+    description: "Resource requests CPU"
+
+  - overwritepath: "controller.resources.requests.memory"
+    defaultvalue: "90Mi"
+    values: "" 
+    description: "Resource requests Memory"
   
                            
   
