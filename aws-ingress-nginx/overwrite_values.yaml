@@ -33,11 +33,11 @@ valuesfrom:
   - overwritepath: "controller.ingressClassResource.default"
     defaultvalue: "false"
     values: "" 
-    description: "Ingress Class Resource
+    description: "Ingress Class Resource"
 
   - overwritepath: "controller.replicaCount"
     defaultvalue: "1"
-    values: "" 
+    values: "2" 
     description: "Replica Count"
 
   - overwritepath: "controller.resources.requests.cpu"
