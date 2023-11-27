@@ -64,10 +64,3 @@ valuesfrom:
     defaultvalue: "100m"
     values: "100m" 
     description: "Resource requests CPU"
-
-  - overwritepath: "controller.resources.requests.memory"
-    defaultvalue: "90Mi"
-    values: "250Mi" 
-    description: "Resource requests Memory"
-
-  s
