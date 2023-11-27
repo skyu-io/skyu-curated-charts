@@ -1,72 +1,73 @@
-name: "aws-for-fluent-bit"
-version: "0.1.32"
-description: "A Helm chart to deploy aws-for-fluent-bit project"
+name: "ingress-nginx"
+version: "4.8.3"
+description: "Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer"
 repository:
-  sourcerefname: "aws"
-  url: "https://aws.github.io/eks-charts"
+  sourcerefname: "ingress-nginx"
+  url: "https://kubernetes.github.io/ingress-nginx"
 valuesfrom:
-  - overwritepath: "cloudWatch.enabled"
+  - overwritepath: "controller.metrics.enabled"
     defaultvalue: "false"
-    values: ""
-    description: "CloudWatch enabling" 
+    values: "true"
+    description: "Metrics"
 
-  - overwritepath: "cloudWatch.endpoint"
-    defaultvalue: null
-    values: ""
-    description: "Specify a custom endpoint for the CloudWatch Logs API." 
-
-  - overwritepath: "cloudWatch.logFormat"
-    defaultvalue: null
-    values: ""
-    description: "An optional parameter that can be used to tell CloudWatch the format of the data. A value of json/emf enables CloudWatch to extract custom metrics embedded in a JSON payload"    
-  
-  - overwritepath: "cloudWatch.logStreamName"
-    defaultvalue: null
-    values: ""
-    description: "The name of the CloudWatch Log Stream that you want log records sent to." 
-  
-  - overwritepath: "cloudWatch.logGroupName"
-    defaultvalue: "/aws/eks/fluentbit-cloudwatch/logs"
-    values: ""
-    description: "The name of the CloudWatch Log Group that you want log records sent to."    
-  
-  - overwritepath: "cloudWatch.region"
-    defaultvalue: "us-east-1"
-    values: ""
-    description: "The AWS region." 
-
-  - overwritepath: "resources.limits.memory"
-    defaultvalue: "250Mi"
-    values: "1Gi"
-    description: "Resource Limit Memory" 
-
-  - overwritepath: "resources.requests.cpu"
-    defaultvalue: "50m"
-    values: ""
-    description: "Resource Request CPU" 
-
-  - overwritepath: "resources.requests.memory"
-    defaultvalue: "50Mi"
-    values: "100Mi"
-    description: "Resource Request Memory" 
-
-  - overwritepath: "s3.enabled"
-    defaultvalue: "false"
-    values: ""
-    description: "s3 bucket" 
-
-  - overwritepath: "s3.endpoint"
-    defaultvalue: null
-    values: ""
-    description: "s3 Bucket Endpoint" 
-
-  - overwritepath: "s3.region"
-    defaultvalue: "us-east-1"
-    values: ""
-    description: "s3 Bucket Region" 
-
-  - overwritepath: "s3.roleArn"
+  - overwritepath: "controller.metrics.service.annotations."prometheus.io/port"
     defaultvalue: ""
-    values: ""
-    description: "s3 Bucket Role Arn" 
+    values: "10254"   
+    description: "Prometheus port number"
 
+  - overwritepath: "controller.metrics.service.annotations."prometheus.io/scrape"
+    defaultvalue: ""
+    values: "true" 
+    description: "Prometheus scrape"
+
+  - overwritepath: "controller.replicaCount"
+    defaultvalue: "1"
+    values: "2" 
+    description: "Replica Count"
+  
+  - overwritepath: "controller.minAvailable"
+    defaultvalue: "1"
+    values: "1" 
+    description: "Min Available"
+
+  - overwritepath: "controller.service.internal.enabled"
+    defaultvalue: false
+    values: true
+    description: "Enable Internal Service"
+
+  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-internal"
+    defaultvalue: ""
+    values: false
+    description: "aws-load-balancer-internal"
+
+  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-name"
+    defaultvalue: ""
+    values: "nlb-${cluster_name}"
+    description: "aws-load-balancer-name"
+
+  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-type"
+    defaultvalue: ""
+    values: "nlb"
+    description: "aws-load-balancer-name"
+
+  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-cross-zone-load-balancing-enabled"
+    defaultvalue: ""
+    values: true
+    description: "aws-load-balancer-cross-zone-load-balancing-enabled "
+
+  - overwritepath: "controller.ingressClassResource.name"
+    defaultvalue: "nginx"
+    values: "nginx-private"
+    description: "Name of the Ingress Class Resource"
+
+  - overwritepath: "controller.resources.requests.cpu"
+    defaultvalue: "100m"
+    values: "100m" 
+    description: "Resource requests CPU"
+
+  - overwritepath: "controller.resources.requests.memory"
+    defaultvalue: "90Mi"
+    values: "250Mi" 
+    description: "Resource requests Memory"
+
+  s
