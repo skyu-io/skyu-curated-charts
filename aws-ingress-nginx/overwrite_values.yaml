@@ -82,9 +82,7 @@ valuesfrom:
 
   - overwritepath: "controller.service.loadBalancerSourceRanges"
     defaultvalue: []
-    values: [
-      0.0.0.0/0
-    ]
+    values: [0.0.0.0/0]
     description: "Load Balancer Source Ranges"
 
   - overwritepath: "controller.config.client-body-buffer-size"
