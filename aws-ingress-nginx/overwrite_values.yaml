@@ -10,45 +10,110 @@ valuesfrom:
     values: "true"
     description: "Metrics"
 
-  - overwritepath: "controller.metrics.service.annotations."prometheus\.io/port"
+  - overwritepath: "controller.metrics.service.annotations."prometheus.io/port"
     defaultvalue: ""
     values: "10254"   
     description: "Prometheus port number"
 
-  - overwritepath: "controller.metrics.service.annotations."prometheus\.io/scrape"
+  - overwritepath: "controller.metrics.service.annotations."prometheus.io/scrape"
     defaultvalue: ""
     values: "true" 
     description: "Prometheus scrape"
-
-  - overwritepath: "controller.service.type"
-    defaultvalue: "ClusterIP"
-    values: "" 
-    description: "Service Type"
-
-  - overwritepath: "controller.service.servicePort"
-    defaultvalue: "443"
-    values: "" 
-    description: "Service Port"
-
-  - overwritepath: "controller.ingressClassResource.default"
-    defaultvalue: "false"
-    values: "" 
-    description: "Ingress Class Resource"
 
   - overwritepath: "controller.replicaCount"
     defaultvalue: "1"
     values: "2" 
     description: "Replica Count"
+  
+  - overwritepath: "controller.minAvailable"
+    defaultvalue: "1"
+    values: "1" 
+    description: "Min Available"
+
+  - overwritepath: "controller.service.internal.enabled"
+    defaultvalue: false
+    values: true
+    description: "Enable Internal Service"
+
+  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-internal"
+    defaultvalue: ""
+    values: false
+    description: "aws-load-balancer-internal"
+
+  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-name"
+    defaultvalue: ""
+    values: "nlb-${cluster_name}"
+    description: "aws-load-balancer-name"
+
+  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-type"
+    defaultvalue: ""
+    values: "nlb"
+    description: "aws-load-balancer-name"
+
+  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-cross-zone-load-balancing-enabled"
+    defaultvalue: ""
+    values: true
+    description: "aws-load-balancer-cross-zone-load-balancing-enabled "
+
+  - overwritepath: "controller.ingressClassResource.name"
+    defaultvalue: "nginx"
+    values: "nginx-private"
+    description: "Name of the Ingress Class Resource"
 
   - overwritepath: "controller.resources.requests.cpu"
     defaultvalue: "100m"
-    values: "" 
+    values: "100m" 
     description: "Resource requests CPU"
 
   - overwritepath: "controller.resources.requests.memory"
     defaultvalue: "90Mi"
-    values: "" 
+    values: "250Mi" 
     description: "Resource requests Memory"
+
+  - overwritepath: "controller.resources.limits.memory"
+    defaultvalue: ""
+    values: "2Gi" 
+    description: "Resource limits Memory" 
+
+  - overwritepath: "controller.resources.limits.cpu"
+    defaultvalue: ""
+    values: "1000m" 
+    description: "Resource limits CPU"
+
+  - overwritepath: "controller.service.loadBalancerSourceRanges"
+    defaultvalue: []
+    values: [
+      0.0.0.0/0
+    ]
+    description: "Load Balancer Source Ranges"
+
+  - overwritepath: "controller.config.client-body-buffer-size"
+    defaultvalue: ""
+    values: "8m" 
+    description: "Config Client Body Buffer Size"
+
+  - overwritepath: "controller.autoscaling.enabled"
+    defaultvalue: false
+    values: true
+    description: "Auto Scaling Enable"
+
+  - overwritepath: "controller.autoscaling.minReplicas"
+    defaultvalue: 1
+    values: 2
+    description: "Minimum Replicas"
+
+  - overwritepath: "controller.autoscaling.maxReplicas"
+    defaultvalue: 11
+    values: 10
+    description: "Maximum Replicas"
+
+  - overwritepath: "controller.autoscaling.targetCPUUtilizationPercentage"
+    defaultvalue: 50
+    values: 75
+    description: "Target CPU Utilization Percentage"
+  
+
+  
   
                            
   

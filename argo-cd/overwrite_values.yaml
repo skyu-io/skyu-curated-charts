@@ -8,3 +8,124 @@ valuesfrom:
   - overwritepath: "applicationSet.replicas"
     defaultvalue: "1"
     values: "1"
+    description: "Replica Count"
+
+  - overwritepath: "global.revisionHistoryLimit"
+    defaultvalue: "3"
+    values: "3"
+    description: "revision History Limit"
+
+  - overwritepath: "controller.metrics.enabled"
+    defaultvalue: false
+    values:  true 
+    description: "metrics enabled"
+
+  - overwritepath: "controller.serviceMonitor.enabled"
+    defaultvalue: false
+    values: true 
+    description: "service Monitor enabled"
+
+  - overwritepath: "configs.cm.timeout.reconciliation"
+    defaultvalue: "180s"
+    values: "45s"
+    description: "configs.cm.timeout.reconciliation"
+  
+  - overwritepath: "configs.cm.exec.enabled"
+    defaultvalue: false
+    values: true  
+    description: "configs.cm.exec.enabled"
+    
+  - overwritepath: "configs.cm.url"
+    defaultvalue: ""
+    values: "${argocdUrl}"  
+    description: "configs.cm.url"
+  
+  - overwritepath: "dex.metrics.enabled"
+    defaultvalue: false
+    values:  true 
+    description: "dex metrics enabled"
+
+  - overwritepath: "dex.serviceMonitor.enabled"
+    defaultvalue: false
+    values: true 
+    description: "dex service Monitor enabled"
+
+  - overwritepath: "redis-ha.enabled"
+    defaultvalue: false
+    values: true 
+    description: "redis-ha enabled"
+
+  - overwritepath: "server.replicas"
+    defaultvalue: 1
+    values: 1 
+    description: "server replicas"
+
+  - overwritepath: "server.autoscaling.enabled"
+    defaultvalue: false
+    values: true
+    description: "server autoscaling enabled"
+
+  - overwritepath: "server.autoscaling.minReplicas"
+    defaultvalue: 1
+    values: 1 
+    description: "server autoscaling minReplicas"
+
+  - overwritepath: "server.autoscaling.maxReplicas"
+    defaultvalue: 5
+    values: 5
+    description: "server autoscaling maxReplicas"
+
+  - overwritepath: "server.autoscaling.targetCPUUtilizationPercentage"
+    defaultvalue: 50
+    values: 75
+    description: "server autoscaling targetCPUUtilizationPercentage"
+
+  - overwritepath: "server.autoscaling.targetCPUUtilizationPercentage"
+    defaultvalue: 50
+    values: 75
+    description: "server autoscaling targetCPUUtilizationPercentage"
+
+  - overwritepath: "server.metrics.enabled"
+    defaultvalue: false
+    values:  true 
+    description: "server metrics enabled"
+
+  - overwritepath: "server.serviceMonitor.enabled"
+    defaultvalue: false
+    values: true 
+    description: "server service Monitor enabled"
+
+  - overwritepath: "server.ingress.enabled"
+    defaultvalue: false
+    values: true 
+    description: "server ingress enabled"
+
+  - overwritepath: "server.ingress.annotations.nginx.ingress.kubernetes.io/backend-protocol"
+    defaultvalue: ""
+    values: "HTTPS" 
+    description: "server ingress annnotations nginx.ingress.kubernetes.io/backend-protocol"
+
+  - overwritepath: "server.ingress.annotations.cert-manager.io/issuer"
+    defaultvalue: ""
+    values: "letsencrypt-production"
+    description: "server ingress annnotations cert-manager.io/issuer"
+
+  - overwritepath: "repoServer.metrics.enabled"
+    defaultvalue: false
+    values:  true 
+    description: "repoServer metrics enabled"
+
+  - overwritepath: "repoServer.serviceMonitor.enabled"
+    defaultvalue: false
+    values: true 
+    description: "repoServer service Monitor enabled"
+
+  - overwritepath: "applicationSet.metrics.enabled"
+    defaultvalue: false
+    values:  true 
+    description: "applicationSet metrics enabled"
+
+  - overwritepath: "applicationSet.serviceMonitor.enabled"
+    defaultvalue: false
+    values: true 
+    description: "applicationSet service Monitor enabled"

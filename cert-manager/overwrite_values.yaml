@@ -8,5 +8,16 @@ valuesfrom:
   - overwritepath: "replicaCount"
     defaultvalue: "1"
     values: "1"
+
+  - overwritepath: "global.priorityClassName"
+    defaultvalue: ""
+    values: "infra-high-priority"
+  
+  - overwritepath: "installCRDs"
+    defaultvalue: false
+    values: true
+
+
+  
   
   

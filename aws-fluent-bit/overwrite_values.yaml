@@ -37,7 +37,7 @@ valuesfrom:
 
   - overwritepath: "resources.limits.memory"
     defaultvalue: "250Mi"
-    values: ""
+    values: "1Gi"
     description: "Resource Limit Memory" 
 
   - overwritepath: "resources.requests.cpu"
@@ -47,7 +47,7 @@ valuesfrom:
 
   - overwritepath: "resources.requests.memory"
     defaultvalue: "50Mi"
-    values: ""
+    values: "100Mi"
     description: "Resource Request Memory" 
 
   - overwritepath: "s3.enabled"

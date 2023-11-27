@@ -10,4 +10,9 @@ valuesfrom:
     values: "2"
     description: "No of Replicas"
 
+  - overwritepath: "alertmanager.alertmanagerSpec.priorityClassName"
+    defaultvalue: ""
+    values: "infra-high-priority"
+    description: "Priority Class Name"
+ 
   
