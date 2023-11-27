@@ -80,11 +80,6 @@ valuesfrom:
     values: "1000m" 
     description: "Resource limits CPU"
 
-  - overwritepath: "controller.service.loadBalancerSourceRanges"
-    defaultvalue: []
-    values: [0.0.0.0/0]
-    description: "Load Balancer Source Ranges"
-
   - overwritepath: "controller.config.client-body-buffer-size"
     defaultvalue: ""
     values: "8m" 
@@ -96,16 +91,16 @@ valuesfrom:
     description: "Auto Scaling Enable"
 
   - overwritepath: "controller.autoscaling.minReplicas"
-    defaultvalue: 1
-    values: 2
+    defaultvalue: "1"
+    values: "2"
     description: "Minimum Replicas"
 
   - overwritepath: "controller.autoscaling.maxReplicas"
-    defaultvalue: 11
-    values: 10
+    defaultvalue: "11"
+    values: "10"
     description: "Maximum Replicas"
 
   - overwritepath: "controller.autoscaling.targetCPUUtilizationPercentage"
-    defaultvalue: 50
-    values: 75
+    defaultvalue: "50"
+    values: "75"
     description: "Target CPU Utilization Percentage"
