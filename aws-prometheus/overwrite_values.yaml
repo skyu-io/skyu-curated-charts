@@ -42,13 +42,13 @@ valuesfrom:
     description: "Queue Config Capacity"
 
   - overwritepath: "prometheus-pushgateway.enabled"
-    defaultvalue: true
-    values: false
+    defaultvalue: "true"
+    values: "false"
     description: "prometheus-pushgateway enabled" 
 
   - overwritepath: "alertmanager.enabled"
-    defaultvalue: true
-    values: false
+    defaultvalue: "true"
+    values: "false"
     description: "alertmanager enabled" 
     
   - overwritepath: "server.priorityClassName"
@@ -57,13 +57,13 @@ valuesfrom:
     description: "priority ClassName" 
 
   - overwritepath: "server.ingress.enabled"
-    defaultvalue: false
-    values: true
+    defaultvalue: "false"
+    values: "true"
     description: "Ingress enabled" 
 
   - overwritepath: "server.persistentVolume.enabled"
-    defaultvalue: true
-    values: false
+    defaultvalue: "true"
+    values: "false"
     description: "persistent Volume" 
 
   - overwritepath: "server.global.scrape_interval"
@@ -72,18 +72,18 @@ valuesfrom:
     description: "global scrape_interval" 
 
   - overwritepath: "server.statefulSet.enabled"
-    defaultvalue: false
-    values: false
+    defaultvalue: "false"
+    values: "false"
     description: "statefulSet Enabled" 
 
   - overwritepath: "server.service.servicePort"
-    defaultvalue: 80
-    values: 9090
+    defaultvalue: "80"
+    values: "9090"
     description: "statefulSet Enabled" 
 
   - overwritepath: "server.service.servicePort"
-    defaultvalue: 80
-    values: 9090
+    defaultvalue: "80"
+    values: "9090"
     description: "statefulSet Enabled" 
    
   

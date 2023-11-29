@@ -14,6 +14,6 @@ valuesfrom:
     values: "infra-high-priority"
   
   - overwritepath: "installCRDs"
-    defaultvalue: false
-    values: true
+    defaultvalue: "false"
+    values: "true"
 

@@ -42,7 +42,7 @@ valuesfrom:
 
   - overwritepath: "resources.requests.cpu"
     defaultvalue: "50m"
-    values: ""
+    values: "100m"
     description: "Resource Request CPU" 
 
   - overwritepath: "resources.requests.memory"

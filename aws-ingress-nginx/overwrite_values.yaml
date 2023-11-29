@@ -29,13 +29,13 @@ valuesfrom:
     description: "Min Available"
 
   - overwritepath: "controller.metrics.enabled"
-    defaultvalue: false
-    values: true
+    defaultvalue: "false"
+    values: "true"
     description: "metrics enabled"
 
   - overwritepath: "controller.service.internal.enabled"
-    defaultvalue: false
-    values: true
+    defaultvalue: "false"
+    values: "true"
     description: "enable Internal Service"
 
   - overwritepath: "controller.ingressClassResource.name"
@@ -69,21 +69,21 @@ valuesfrom:
     description: "Config Client Body Buffer Size"
 
   - overwritepath: "controller.autoscaling.enabled"
-    defaultvalue: false
-    values: true
+    defaultvalue: "false"
+    values: "true"
     description: "Auto Scaling Enable"
 
   - overwritepath: "controller.autoscaling.minReplicas"
-    defaultvalue: 1
-    values: 2
+    defaultvalue: "1"
+    values: "2"
     description: "Minimum Replicas"
 
   - overwritepath: "controller.autoscaling.maxReplicas"
-    defaultvalue: 11
-    values: 10
+    defaultvalue: "11"
+    values: "10"
     description: "Maximum Replicas"
 
   - overwritepath: "controller.autoscaling.targetCPUUtilizationPercentage"
-    defaultvalue: 50
-    values: 75
+    defaultvalue: "50"
+    values: "75"
     description: "Target CPU Utilization Percentage"
