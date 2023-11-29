@@ -4,21 +4,24 @@ description: "Ingress controller for Kubernetes using NGINX as a reverse proxy a
 repository:
   sourcerefname: "ingress-nginx"
   url: "https://kubernetes.github.io/ingress-nginx"
+values:
+  controller:
+    metrics: 
+      service: 
+        annotations: 
+          prometheus.io/port: "10254"
+          prometheus.io/scrape: "true"
+    service: 
+      annotations: 
+        service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+        service.beta.kubernetes.io/aws-load-balancer-name: "nlb-helm-test-cluster"
+        service.beta.kubernetes.io/aws-load-balancer-type: "nlb",
+        service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
 valuesfrom:
   - overwritepath: "controller.metrics.enabled"
-    defaultvalue: "false"
-    values: "true"
-    description: "Metrics"
-
-  - overwritepath: "controller.metrics.service.annotations."prometheus.io/port"
-    defaultvalue: ""
-    values: "10254"   
-    description: "Prometheus port number"
-
-  - overwritepath: "controller.metrics.service.annotations."prometheus.io/scrape"
-    defaultvalue: ""
-    values: "true" 
-    description: "Prometheus scrape"
+    defaultvalue: false
+    values: true
+    description: "Metrics Enabled"
 
   - overwritepath: "controller.replicaCount"
     defaultvalue: "1"
@@ -34,26 +37,6 @@ valuesfrom:
     defaultvalue: false
     values: true
     description: "Enable Internal Service"
-
-  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-internal"
-    defaultvalue: ""
-    values: false
-    description: "aws-load-balancer-internal"
-
-  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-name"
-    defaultvalue: ""
-    values: "nlb-${cluster_name}"
-    description: "aws-load-balancer-name"
-
-  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-type"
-    defaultvalue: ""
-    values: "nlb"
-    description: "aws-load-balancer-name"
-
-  - overwritepath: "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-cross-zone-load-balancing-enabled"
-    defaultvalue: ""
-    values: true
-    description: "aws-load-balancer-cross-zone-load-balancing-enabled "
 
   - overwritepath: "controller.ingressClassResource.name"
     defaultvalue: "nginx"

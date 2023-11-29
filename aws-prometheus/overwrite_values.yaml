@@ -4,16 +4,17 @@ description: "Prometheus is a monitoring system and time series database."
 repository:
   sourcerefname: "prometheus-community"
   url: "https://prometheus-community.github.io/helm-charts"
+values:
+  serviceAccounts:
+    server:
+      annotations:
+        eks.amazonaws.com/role-arn: "${IAM_PROXY_PROMETHEUS_ROLE_ARN}"
+
 valuesfrom:
   - overwritepath: "serviceAccounts.server.name"
     defaultvalue: ""
     values: "amp-iamproxy-ingest-service-account"
     description: "Service Account Name"
-
-  - overwritepath: "serviceAccounts.server.annotations.eks.amazonaws.com/role-arn"
-    defaultvalue: ""
-    values: "${IAM_PROXY_PROMETHEUS_ROLE_ARN}"
-    description: "IAM Proxy Prometheus Role Arn"
 
   - overwritepath: "server.remoteWrite.url"
     defaultvalue: ""

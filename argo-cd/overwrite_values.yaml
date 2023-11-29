@@ -4,6 +4,12 @@ description: "A Helm chart for Argo CD, a declarative, GitOps continuous deliver
 repository:
   sourcerefname: "argo"
   url: "https://argoproj.github.io/argo-helm"
+values:
+  server:
+    ingress:
+      annotations:
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+        cert-manager.io/issuer: "letsencrypt-production"
 valuesfrom:
   - overwritepath: "applicationSet.replicas"
     defaultvalue: "1"
@@ -99,16 +105,6 @@ valuesfrom:
     defaultvalue: false
     values: true 
     description: "server ingress enabled"
-
-  - overwritepath: "server.ingress.annotations.nginx.ingress.kubernetes.io/backend-protocol"
-    defaultvalue: ""
-    values: "HTTPS" 
-    description: "server ingress annnotations nginx.ingress.kubernetes.io/backend-protocol"
-
-  - overwritepath: "server.ingress.annotations.cert-manager.io/issuer"
-    defaultvalue: ""
-    values: "letsencrypt-production"
-    description: "server ingress annnotations cert-manager.io/issuer"
 
   - overwritepath: "repoServer.metrics.enabled"
     defaultvalue: false
