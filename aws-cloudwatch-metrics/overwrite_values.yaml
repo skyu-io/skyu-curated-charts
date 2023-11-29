@@ -17,7 +17,7 @@ valuesfrom:
 
   - overwritepath: "resources.limits.memory"
     defaultvalue: "200Mi"
-    values: ""
+    values: "200Mi"
     description: "Memory limit"    
 
   - overwritepath: "resources.requests.cpu"
@@ -29,3 +29,28 @@ valuesfrom:
     defaultvalue: "200Mi"
     values: "200Mi"
     description: "Requests Memory"    
+
+  - overwritepath: "serviceAccount.create"
+    defaultvalue: "true"
+    values: "true"
+    description: "service Account create"    
+  
+  - overwritepath: "serviceAccount.name"
+    defaultvalue: "null"
+    values: ""
+    description: "service Account create"   
+
+  - overwritepath: "statsd.enabled"
+    defaultvalue: "false"
+    values: "false"
+    description: "statsd enabled"   
+
+  - overwritepath: "statsd.port"
+    defaultvalue: "8125"
+    values: "8125"
+    description: "statsd port"   
+
+  - overwritepath: "statsd.protocol"
+    defaultvalue: "UDP"
+    values: "UDP"
+    description: "statsd protocol"   

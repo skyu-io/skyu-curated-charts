@@ -14,5 +14,3 @@ valuesfrom:
     defaultvalue: ""
     values: "infra-high-priority"
     description: "Priority Class Name"
- 
-  

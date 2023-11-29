@@ -52,7 +52,7 @@ valuesfrom:
 
   - overwritepath: "s3.enabled"
     defaultvalue: "false"
-    values: ""
+    values: "true"
     description: "s3 bucket" 
 
   - overwritepath: "s3.endpoint"
