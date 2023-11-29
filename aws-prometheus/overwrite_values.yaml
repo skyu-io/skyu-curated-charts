@@ -56,11 +56,6 @@ valuesfrom:
     values: "infra-high-priority"
     description: "priority ClassName" 
 
-  - overwritepath: "server.ingress.enabled"
-    defaultvalue: "false"
-    values: "true"
-    description: "Ingress enabled" 
-
   - overwritepath: "server.persistentVolume.enabled"
     defaultvalue: "true"
     values: "false"
@@ -81,11 +76,5 @@ valuesfrom:
     values: "9090"
     description: "statefulSet Enabled" 
 
-  - overwritepath: "server.service.servicePort"
-    defaultvalue: "80"
-    values: "9090"
-    description: "statefulSet Enabled" 
    
-  
-  
   

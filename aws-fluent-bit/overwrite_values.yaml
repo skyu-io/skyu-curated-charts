@@ -55,6 +55,11 @@ valuesfrom:
     values: "true"
     description: "s3 bucket" 
 
+  - overwritepath: "s3.bucket"
+    defaultvalue: null
+    values: ""
+    description: "s3 Bucket name"
+
   - overwritepath: "s3.endpoint"
     defaultvalue: null
     values: ""
