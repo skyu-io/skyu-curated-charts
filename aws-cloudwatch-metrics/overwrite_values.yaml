@@ -1,6 +1,7 @@
 name: "aws-cloudwatch-metrics"
 version: "0.0.9"
 description: "A Helm chart to deploy aws-cloudwatch-metrics project"
+logoimageid: "713df283-63b6-498f-abf1-f0631c201511"
 repository:
   sourcerefname: "aws"
   url: "https://aws.github.io/eks-charts"
