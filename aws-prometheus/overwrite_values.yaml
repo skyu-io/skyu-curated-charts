@@ -23,17 +23,17 @@ valuesfrom:
     description: "Remote Write URL"
 
   - overwritepath: "server.remoteWrite.signv4.region"
-    defaultvalue: ""
-    values: "${REGION}"
+    defaultvalue: "us-east-1"
+    values: "us-east-1"
     description: "Region"
 
   - overwritepath: "server.remoteWrite.queue_config.max_samples_per_send"
-    defaultvalue: ""
+    defaultvalue: "1000"
     values: "1000"
     description: "Queue Config Max per Samples per Send"
 
   - overwritepath: "server.remoteWrite.queue_config.max_shards"
-    defaultvalue: ""
+    defaultvalue: "200"
     values: "200"
     description: "Queue Config Max Shards"
 
@@ -53,7 +53,7 @@ valuesfrom:
     description: "alertmanager enabled" 
     
   - overwritepath: "server.priorityClassName"
-    defaultvalue: ""
+    defaultvalue: "infra-high-priority"
     values: "infra-high-priority"
     description: "priority ClassName" 
 

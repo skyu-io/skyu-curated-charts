@@ -55,17 +55,17 @@ valuesfrom:
     description: "Resource requests Memory"
 
   - overwritepath: "controller.resources.limits.memory"
-    defaultvalue: ""
+    defaultvalue: "2Gi"
     values: "2Gi" 
     description: "Resource limits Memory" 
 
   - overwritepath: "controller.resources.limits.cpu"
-    defaultvalue: ""
+    defaultvalue: "000m"
     values: "1000m" 
     description: "Resource limits CPU"
 
   - overwritepath: "controller.config.client-body-buffer-size"
-    defaultvalue: ""
+    defaultvalue: "8m"
     values: "8m" 
     description: "Config Client Body Buffer Size"
 

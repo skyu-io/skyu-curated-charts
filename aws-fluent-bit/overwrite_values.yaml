@@ -12,17 +12,17 @@ valuesfrom:
     description: "CloudWatch enabling" 
 
   - overwritepath: "cloudWatch.endpoint"
-    defaultvalue: null
+    defaultvalue: ""
     values: ""
     description: "Specify a custom endpoint for the CloudWatch Logs API." 
 
   - overwritepath: "cloudWatch.logFormat"
-    defaultvalue: null
+    defaultvalue: ""
     values: ""
     description: "An optional parameter that can be used to tell CloudWatch the format of the data. A value of json/emf enables CloudWatch to extract custom metrics embedded in a JSON payload"    
   
   - overwritepath: "cloudWatch.logStreamName"
-    defaultvalue: null
+    defaultvalue: ""
     values: ""
     description: "The name of the CloudWatch Log Stream that you want log records sent to." 
   
@@ -57,12 +57,12 @@ valuesfrom:
     description: "s3 bucket" 
 
   - overwritepath: "s3.bucket"
-    defaultvalue: null
+    defaultvalue: "dev-eks-s3-bucket"
     values: ""
     description: "s3 Bucket name"
 
   - overwritepath: "s3.endpoint"
-    defaultvalue: null
+    defaultvalue: ""
     values: ""
     description: "s3 Bucket Endpoint" 
 
