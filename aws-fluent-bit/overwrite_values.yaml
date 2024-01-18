@@ -34,7 +34,7 @@ valuesfrom:
   - overwritepath: "cloudWatch.region"
     defaultvalue: "us-east-1"
     values: ""
-    description: "The AWS region." 
+    description: "The AWS region" 
 
   - overwritepath: "resources.limits.memory"
     defaultvalue: "250Mi"

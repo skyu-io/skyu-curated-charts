@@ -35,17 +35,17 @@ valuesfrom:
   - overwritepath: "configs.cm.timeout.reconciliation"
     defaultvalue: "180s"
     values: "45s"
-    description: "configs.cm.timeout.reconciliation"
+    description: "Configs cm timeout Reconciliation"
   
   - overwritepath: "configs.cm.exec.enabled"
     defaultvalue: "false"
     values: "true"  
-    description: "configs.cm.exec.enabled"
+    description: "Configs cm Exec Enabled"
     
   - overwritepath: "configs.cm.url"
     defaultvalue: ""
     values: "${argocdUrl}"  
-    description: "configs.cm.url"
+    description: "Configs cm Url"
   
   - overwritepath: "dex.metrics.enabled"
     defaultvalue: "false"
@@ -81,11 +81,6 @@ valuesfrom:
     defaultvalue: "5"
     values: "5"
     description: "server autoscaling maxReplicas"
-
-  - overwritepath: "server.autoscaling.targetCPUUtilizationPercentage"
-    defaultvalue: "50"
-    values: "75"
-    description: "server autoscaling targetCPUUtilizationPercentage"
 
   - overwritepath: "server.autoscaling.targetCPUUtilizationPercentage"
     defaultvalue: "50"
