@@ -75,7 +75,7 @@ valuesfrom:
   - overwritepath: "server.service.servicePort"
     defaultvalue: "80"
     values: "9090"
-    description: "statefulSet Enabled" 
+    description: "Service Port" 
 
    
   

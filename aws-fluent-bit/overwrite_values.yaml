@@ -54,12 +54,12 @@ valuesfrom:
   - overwritepath: "s3.enabled"
     defaultvalue: "false"
     values: "true"
-    description: "s3 bucket" 
+    description: "s3 Bucket Enabled" 
 
   - overwritepath: "s3.bucket"
     defaultvalue: "dev-eks-s3-bucket"
     values: ""
-    description: "s3 Bucket name"
+    description: "s3 Bucket Name"
 
   - overwritepath: "s3.endpoint"
     defaultvalue: "https://custom-s3-endpoint"
