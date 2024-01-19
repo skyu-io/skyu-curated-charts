@@ -19,17 +19,17 @@ valuesfrom:
   - overwritepath: "cloudWatch.logFormat"
     defaultvalue: "json"
     values: ""
-    description: "An optional parameter that can be used to tell CloudWatch the format of the data. A value of json/emf enables CloudWatch to extract custom metrics embedded in a JSON payload"    
+    description: " Optional Data Format Parameter for CloudWatch: json/emf"    
   
   - overwritepath: "cloudWatch.logStreamName"
     defaultvalue: "my-log-stream"
     values: ""
-    description: "The name of the CloudWatch Log Stream that you want log records sent to." 
+    description: "CloudWatch Log Stream Name" 
   
   - overwritepath: "cloudWatch.logGroupName"
     defaultvalue: "/aws/eks/fluentbit-cloudwatch/logs"
     values: ""
-    description: "The name of the CloudWatch Log Group that you want log records sent to."    
+    description: "CloudWatch Log Group Name"    
   
   - overwritepath: "cloudWatch.region"
     defaultvalue: "us-east-1"
