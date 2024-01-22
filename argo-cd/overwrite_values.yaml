@@ -42,11 +42,6 @@ valuesfrom:
     values: "true"  
     description: "Configs cm Exec Enabled"
     
-  - overwritepath: "configs.cm.url"
-    defaultvalue: ""
-    values: "${argocdUrl}"  
-    description: "Configs cm Url"
-  
   - overwritepath: "dex.metrics.enabled"
     defaultvalue: "false"
     values:  "true" 
@@ -122,3 +117,8 @@ valuesfrom:
     values: "true" 
     description: "applicationSet service Monitor enabled"
   
+secrets:
+  - overwritepath: "configs.cm.url"
+    defaultvalue: ""
+    values: "${argocdUrl}"  
+    description: "Configs cm Url"
