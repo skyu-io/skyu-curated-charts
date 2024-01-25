@@ -1,0 +1,7 @@
+name: "podinfo"
+version: "6.5.3"
+description: "Prometheus is a monitoring system and time series database."
+logoimageid: "0503add5-3fce-4b63-bbf3-b9f649512a86"
+repository:
+  sourcerefname: "podinfo"
+  url: "https://stefanprodan.github.io/podinfo"
