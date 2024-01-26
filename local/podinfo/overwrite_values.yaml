@@ -1,0 +1,14 @@
+name: "podinfo"
+version: "6.5.4"
+description: "Podinfo Helm chart for Kubernetes"
+logoimageid: ""
+license: "Apache-2.0"
+repository:
+  sourcerefname: "podinfo"
+  url: "https://stefanprodan.github.io/podinfo"
+  verified_publisher: false
+valuesfrom:
+  - overwritepath: "replicaCount"
+    defaultvalue: "2"
+    values: ""
+    description: "Replica Count"   
