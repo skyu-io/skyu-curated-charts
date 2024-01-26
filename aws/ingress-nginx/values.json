@@ -15,9 +15,21 @@
             },
             "certificate": "/usr/local/certificates/cert",
             "createSecretJob": {
+                "name": "create",
                 "resources": {},
                 "securityContext": {
-                    "allowPrivilegeEscalation": false
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                        "drop": [
+                            "ALL"
+                        ]
+                    },
+                    "readOnlyRootFilesystem": true,
+                    "runAsNonRoot": true,
+                    "runAsUser": 65532,
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
                 }
             },
             "enabled": true,
@@ -26,6 +38,7 @@
             "failurePolicy": "Fail",
             "key": "/usr/local/certificates/key",
             "labels": {},
+            "name": "admission",
             "namespaceSelector": {},
             "objectSelector": {},
             "patch": {
@@ -38,22 +51,33 @@
                     "tag": "v20231011-8b53cabe0"
                 },
                 "labels": {},
+                "networkPolicy": {
+                    "enabled": false
+                },
                 "nodeSelector": {
                     "kubernetes.io/os": "linux"
                 },
                 "podAnnotations": {},
                 "priorityClassName": "",
-                "securityContext": {
-                    "fsGroup": 2000,
-                    "runAsNonRoot": true,
-                    "runAsUser": 2000
-                },
+                "securityContext": {},
                 "tolerations": []
             },
             "patchWebhookJob": {
+                "name": "patch",
                 "resources": {},
                 "securityContext": {
-                    "allowPrivilegeEscalation": false
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                        "drop": [
+                            "ALL"
+                        ]
+                    },
+                    "readOnlyRootFilesystem": true,
+                    "runAsNonRoot": true,
+                    "runAsUser": 65532,
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
                 }
             },
             "port": 8443,
@@ -86,6 +110,7 @@
             "http": 80,
             "https": 443
         },
+        "containerSecurityContext": {},
         "customTemplate": {
             "configMapKey": "",
             "configMapName": ""
@@ -117,15 +142,20 @@
         },
         "hostname": {},
         "image": {
-            "allowPrivilegeEscalation": true,
+            "allowPrivilegeEscalation": false,
             "chroot": false,
-            "digest": "sha256:5b161f051d017e55d358435f295f5e9a297e66158f136321d9b04520ec6c48a3",
-            "digestChroot": "sha256:5976b1067cfbca8a21d0ba53d71f83543a73316a61ea7f7e436d6cf84ddf9b26",
+            "digest": "sha256:b3aba22b1da80e7acfc52b115cae1d4c687172cbf2b742d5b502419c25ff340e",
+            "digestChroot": "sha256:9a8d7b25a846a6461cd044b9aea9cf6cad972bcf2e64d9fd246c0279979aad2d",
             "image": "ingress-nginx/controller",
             "pullPolicy": "IfNotPresent",
+            "readOnlyRootFilesystem": false,
             "registry": "registry.k8s.io",
+            "runAsNonRoot": true,
             "runAsUser": 101,
-            "tag": "v1.9.4"
+            "seccompProfile": {
+                "type": "RuntimeDefault"
+            },
+            "tag": "v1.9.5"
         },
         "ingressClass": "nginx",
         "ingressClassByName": false,
@@ -193,6 +223,7 @@
             },
             "serviceMonitor": {
                 "additionalLabels": {},
+                "annotations": {},
                 "enabled": false,
                 "metricRelabelings": [],
                 "namespace": "",
@@ -213,10 +244,28 @@
         },
         "opentelemetry": {
             "containerSecurityContext": {
-                "allowPrivilegeEscalation": false
+                "allowPrivilegeEscalation": false,
+                "capabilities": {
+                    "drop": [
+                        "ALL"
+                    ]
+                },
+                "readOnlyRootFilesystem": true,
+                "runAsNonRoot": true,
+                "runAsUser": 65532,
+                "seccompProfile": {
+                    "type": "RuntimeDefault"
+                }
             },
             "enabled": false,
-            "image": "registry.k8s.io/ingress-nginx/opentelemetry:v20230721-3e2062ee5@sha256:13bee3f5223883d3ca62fee7309ad02d22ec00ff0d7033e3e9aca7a9f60fd472",
+            "image": {
+                "digest": "sha256:13bee3f5223883d3ca62fee7309ad02d22ec00ff0d7033e3e9aca7a9f60fd472",
+                "distroless": true,
+                "image": "ingress-nginx/opentelemetry",
+                "registry": "registry.k8s.io",
+                "tag": "v20230721-3e2062ee5"
+            },
+            "name": "opentelemetry",
             "resources": {}
         },
         "podAnnotations": {},
@@ -256,6 +305,7 @@
         "service": {
             "annotations": {},
             "appProtocol": true,
+            "clusterIP": "",
             "enableHttp": true,
             "enableHttps": true,
             "enabled": true,
@@ -263,13 +313,31 @@
                 "enabled": true
             },
             "externalIPs": [],
+            "externalTrafficPolicy": "",
             "internal": {
                 "annotations": {},
+                "appProtocol": true,
+                "clusterIP": "",
                 "enabled": false,
+                "externalIPs": [],
+                "externalTrafficPolicy": "",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "loadBalancerClass": "",
                 "loadBalancerIP": "",
                 "loadBalancerSourceRanges": [],
+                "nodePorts": {
+                    "http": "",
+                    "https": "",
+                    "tcp": {},
+                    "udp": {}
+                },
                 "ports": {},
-                "targetPorts": {}
+                "sessionAffinity": "",
+                "targetPorts": {},
+                "type": ""
             },
             "ipFamilies": [
                 "IPv4"
@@ -289,6 +357,7 @@
                 "http": 80,
                 "https": 443
             },
+            "sessionAffinity": "",
             "targetPorts": {
                 "http": "http",
                 "https": "https"
@@ -325,6 +394,7 @@
         "enabled": false,
         "existingPsp": "",
         "extraArgs": {},
+        "extraConfigMaps": [],
         "extraEnvs": [],
         "extraVolumeMounts": [],
         "extraVolumes": [],
@@ -336,6 +406,9 @@
             "registry": "registry.k8s.io",
             "runAsNonRoot": true,
             "runAsUser": 65534,
+            "seccompProfile": {
+                "type": "RuntimeDefault"
+            },
             "tag": "1.5"
         },
         "labels": {},

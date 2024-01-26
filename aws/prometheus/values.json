@@ -12,6 +12,7 @@
             "runAsUser": 65534
         }
     },
+    "commonMetaLabels": {},
     "configmapReload": {
         "env": [],
         "prometheus": {
@@ -25,7 +26,7 @@
                 "digest": "",
                 "pullPolicy": "IfNotPresent",
                 "repository": "quay.io/prometheus-operator/prometheus-config-reloader",
-                "tag": "v0.67.0"
+                "tag": "v0.70.0"
             },
             "name": "configmap-reload",
             "resources": {}
@@ -163,6 +164,7 @@
         "replicaCount": 1,
         "resources": {},
         "retention": "15d",
+        "retentionSize": "",
         "revisionHistoryLimit": 10,
         "securityContext": {
             "fsGroup": 65534,
