@@ -23,7 +23,7 @@ valuesfrom:
     values: "replicator"
     description: "Name of the Replication User" 
 
-secret:
+secrets:
   - overwritepath: "auth.rootPassword"
     defaultvalue: "admin123"
     values: ""
