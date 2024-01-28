@@ -1,0 +1,40 @@
+name: "mysql"
+version: "9.18.0"
+description: "MySQL is a fast, reliable, scalable, and easy to use open source relational database system. Designed to handle mission-critical, heavy-load production applications."
+logoimageid: "d9af69e0-4dd9-4f44-aec5-43684b389518"
+license: "Apache-2.0"
+repository:
+  sourcerefname: "bitnami"
+  url: "https://charts.bitnami.com/bitnami"
+  verified_publisher: true
+valuesfrom:
+  - overwritepath: "auth.database"
+    defaultvalue: "my_database"
+    values: ""
+    description: "Name of the Database"   
+
+  - overwritepath: "auth.username"
+    defaultvalue: "admin123"
+    values: ""
+    description: "Name of the Username"   
+
+  - overwritepath: "auth.replicationUser"
+    defaultvalue: "replicator"
+    values: "replicator"
+    description: "Name of the Replication User" 
+
+secret:
+  - overwritepath: "auth.rootPassword"
+    defaultvalue: "admin123"
+    values: ""
+    description: "Root Password"   
+  
+  - overwritepath: "auth.password"
+    defaultvalue: "admin123"
+    values: ""
+    description: "General Password"   
+
+  - overwritepath: "auth.replicationPassword"
+    defaultvalue: "admin123"
+    values: ""
+    description: "Replication Password"   
