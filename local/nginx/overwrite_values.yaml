@@ -27,4 +27,9 @@ valuesfrom:
     defaultvalue: "443"
     values: ""
     description: "Service https port"
+
+  - overwritepath: automountServiceAccountToken
+    defaultvalue: true
+    values: ""
+    description: "Automount Service Account Token"
   
