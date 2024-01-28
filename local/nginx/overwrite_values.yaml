@@ -29,7 +29,7 @@ valuesfrom:
     description: "Service https port"
 
   - overwritepath: automountServiceAccountToken
-    defaultvalue: true
-    values: ""
+    defaultvalue: false
+    values: true
     description: "Automount Service Account Token"
   
