@@ -43,11 +43,6 @@ valuesfrom:
     values: ""
     description: "s3 Bucket Name"
 
-  - overwritepath: "s3.endpoint"
-    defaultvalue: "https://custom-s3-endpoint"
-    values: ""
-    description: "s3 Bucket Endpoint" 
-
   - overwritepath: "s3.region"
     defaultvalue: "us-east-1"
     values: ""
