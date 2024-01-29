@@ -8,35 +8,15 @@ repository:
   url: "https://aws.github.io/eks-charts"
   verified_publisher: false
 valuesfrom:
-  - overwritepath: "cloudWatch.enabled"
-    defaultvalue: "false"
-    values: ""
-    description: "CloudWatch enabling" 
-
-  - overwritepath: "cloudWatch.endpoint"
-    defaultvalue: "https://custom-cloudwatch-endpoint"
-    values: ""
-    description: "Specify a custom endpoint for the CloudWatch Logs API." 
-
-  - overwritepath: "cloudWatch.logFormat"
-    defaultvalue: "json"
-    values: ""
-    description: " Optional Data Format Parameter for CloudWatch: json/emf"    
-  
-  - overwritepath: "cloudWatch.logStreamName"
-    defaultvalue: "my-log-stream"
-    values: ""
-    description: "CloudWatch Log Stream Name" 
-  
-  - overwritepath: "cloudWatch.logGroupName"
+  - overwritepath: "cloudWatchLogs.logGroupName"
     defaultvalue: "/aws/eks/fluentbit-cloudwatch/logs"
     values: ""
-    description: "CloudWatch Log Group Name"    
-  
-  - overwritepath: "cloudWatch.region"
+    description: "CloudWatch Logs Logs Group Name" 
+
+  - overwritepath: "cloudWatchLogs.region"
     defaultvalue: "us-east-1"
-    values: ""
-    description: "The AWS region" 
+    values: "us-east-1"
+    description: "CloudWatch Logs Region" 
 
   - overwritepath: "resources.limits.memory"
     defaultvalue: "250Mi"
@@ -78,4 +58,9 @@ secrets:
     defaultvalue: "arn:aws:iam::123456789012:role/s3-access-role"
     values: ""
     description: "s3 Bucket Role Arn" 
+
+  - overwritepath: "cloudWatchLogs.roleArn"
+    defaultvalue: arn:aws:iam::123456789012:role/s3-access-role"
+    values: ""
+    description: "CloudWatch Logs Role ARN" 
 
