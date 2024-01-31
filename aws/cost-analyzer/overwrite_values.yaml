@@ -1,0 +1,80 @@
+name: "cost-analyzer"
+version: "2.0.1"
+description: "A Helm chart that sets up Kubecost, Prometheus, and Grafana to monitor cloud costs."
+logoimageid: ""
+license: ""
+repository:
+  sourcerefname: "kubecost"
+  url: "https://kubecost.github.io/cost-analyzer"
+  verified_publisher: false
+valuesfrom:
+  - overwritepath: "global.grafana.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "Grafana Enabled"   
+
+  - overwritepath: "global.grafana.proxy"
+    defaultvalue: "true"
+    values: "false"
+    description: "Grafana Proxy"  
+
+  - overwritepath: "pricingCsv.enabled"
+    defaultvalue: "false"
+    values: "false"
+    description: "PricingCsv Enabled"    
+
+  - overwritepath: "pricingCsv.location.URI"
+    defaultvalue: "s3://kc-csv-test/pricing_schema.csv"
+    values: ""
+    description: "PricingCsv Location URI"  
+
+  - overwritepath: "pricingCsv.location.csvAccessCredentials"
+    defaultvalue: "pricing-schema-access-secret"
+    values: ""
+    description: "PricingCsv Location csv Access Credentials"    
+
+  - overwritepath: "pricingCsv.location.provider"
+    defaultvalue: "AWS"
+    values: "AWS"
+    description: "PricingCsv Location Provider"      
+  
+  - overwritepath: "pricingCsv.location.region"
+    defaultvalue: "us-east-1"
+    values: "us-east-1"
+    description: "PricingCsv Location Region"   
+  
+  - overwritepath: "kubecostFrontend.resources.requests.cpu"
+    defaultvalue: "10m"
+    values: "10m"
+    description: "Kubecost Frontend Resource Requests CPU"  
+
+  - overwritepath: "kubecostFrontend.resources.requests.memory"
+    defaultvalue: "55Mi"
+    values: "55Mi"
+    description: "Kubecost Frontend Resource Requests Memory" 
+
+  - overwritepath: "kubecostModel.warmCache"
+    defaultvalue: "false"
+    values: "true"
+    description: "KubecostModel WarmCache"   
+
+  - overwritepath: "kubecostModel.etlDailyStoreDurationDays"
+    defaultvalue: "91"
+    values: "120"
+    description: "KubecostModel etl Daily Store Duration Days"    
+
+  - overwritepath: "kubecostModel.maxQueryConcurrency"
+    defaultvalue: "5"
+    values: "5"
+    description: "KubecostModel max Query Concurrency" 
+
+  - overwritepath: "kubecostModel.resources.requests.cpu"
+    defaultvalue: "200m"
+    values: "200m"
+    description: "Kubecost Frontend Resource Requests CPU"
+
+  - overwritepath: "kubecostModel.resources.requests.memory"
+    defaultvalue: "55Mi"
+    values: "55Mi"
+    description: "Kubecost Frontend Resource Requests Memory"                
+    
