@@ -1,7 +1,7 @@
 name: "cost-analyzer"
 version: "2.0.1"
 description: "A Helm chart that sets up Kubecost, Prometheus, and Grafana to monitor cloud costs."
-logoimageid: ""
+logoimageid: "713df283-63b6-498f-abf1-f0631c201511"
 license: ""
 repository:
   sourcerefname: "kubecost"
@@ -17,31 +17,6 @@ valuesfrom:
     defaultvalue: "true"
     values: "false"
     description: "Grafana Proxy"  
-
-  - overwritepath: "pricingCsv.enabled"
-    defaultvalue: "false"
-    values: "false"
-    description: "PricingCsv Enabled"    
-
-  - overwritepath: "pricingCsv.location.URI"
-    defaultvalue: "s3://kc-csv-test/pricing_schema.csv"
-    values: ""
-    description: "PricingCsv Location URI"  
-
-  - overwritepath: "pricingCsv.location.csvAccessCredentials"
-    defaultvalue: "pricing-schema-access-secret"
-    values: ""
-    description: "PricingCsv Location csv Access Credentials"    
-
-  - overwritepath: "pricingCsv.location.provider"
-    defaultvalue: "AWS"
-    values: "AWS"
-    description: "PricingCsv Location Provider"      
-  
-  - overwritepath: "pricingCsv.location.region"
-    defaultvalue: "us-east-1"
-    values: "us-east-1"
-    description: "PricingCsv Location Region"   
   
   - overwritepath: "kubecostFrontend.resources.requests.cpu"
     defaultvalue: "10m"
