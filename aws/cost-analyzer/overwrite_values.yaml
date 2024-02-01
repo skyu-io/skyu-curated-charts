@@ -7,7 +7,29 @@ repository:
   sourcerefname: "kubecost"
   url: "https://kubecost.github.io/cost-analyzer"
   verified_publisher: false
+values:
+  ingress:
+    annotations: 
+      ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
 valuesfrom:
+
+  - overwritepath: "ingress.className"
+    defaultvalue: "nginx-private"
+    values: "nginx-private"
+    description: "Ingress Classname"   
+
+  - overwritepath: "ingress.enabled"
+    defaultvalue: "false"
+    values: "true"
+    description: "Ingress Enabled"
+
+  - overwritepath: "ingress.hosts"
+    defaultvalue: "["cost-analyzer.local"]"
+    values: "["cost-analyzer.local"]"
+    description: "Ingress Host - Do not remove []"
+
   - overwritepath: "global.grafana.enabled"
     defaultvalue: "true"
     values: "false"
@@ -51,5 +73,17 @@ valuesfrom:
   - overwritepath: "kubecostModel.resources.requests.memory"
     defaultvalue: "55Mi"
     values: "55Mi"
-    description: "Kubecost Frontend Resource Requests Memory"                
+    description: "Kubecost Frontend Resource Requests Memory"    
+
+  - overwritepath: "forecasting.resources.requests.memory"
+    defaultvalue: "300Mi"
+    values: "300Mi"
+    description: "Forecasting Resource Requests Memory"
+
+  - overwritepath: "forecasting.resources.requests.cpu"
+    defaultvalue: "200m"
+    values: "200m"
+    description: "Forecasting Resource Requests Memory"
+
+                 
     
