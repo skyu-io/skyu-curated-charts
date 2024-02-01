@@ -14,7 +14,6 @@ values:
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
 valuesfrom:
-
   - overwritepath: "ingress.className"
     defaultvalue: "nginx-private"
     values: "nginx-private"
@@ -24,11 +23,6 @@ valuesfrom:
     defaultvalue: "false"
     values: "true"
     description: "Ingress Enabled"
-
-  - overwritepath: "ingress.hosts"
-    defaultvalue: "["cost-analyzer.local"]"
-    values: "["cost-analyzer.local"]"
-    description: "Ingress Host - Do not remove []"
 
   - overwritepath: "global.grafana.enabled"
     defaultvalue: "true"
