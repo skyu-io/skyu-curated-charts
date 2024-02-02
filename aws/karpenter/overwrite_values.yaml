@@ -7,10 +7,6 @@ repository:
   sourcerefname: "karpenter"
   url: "https://charts.karpenter.sh"
   verified_publisher: false
-values:
-  serviceAccount:
-    annotations:
-      eks\.amazonaws\.com/role-arn: ""
 valuesfrom:
   - overwritepath: "clusterName"
     defaultvalue: "dev-eks-cluster"
