@@ -10,7 +10,7 @@ repository:
 values:
   serviceAccount:
     annotations:
-      eks\.amazonaws\.com/role-arn: "arn:aws:iam::985504043303:role/role-for-test-curated-chart"
+      eks\.amazonaws\.com/role-arn: ""
 valuesfrom:
   - overwritepath: "clusterName"
     defaultvalue: "dev-eks-cluster"
