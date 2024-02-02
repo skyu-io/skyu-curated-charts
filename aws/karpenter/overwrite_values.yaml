@@ -10,7 +10,7 @@ repository:
 values:
   serviceAccount:
     annotations:
-      eks\.amazonaws\.com/role-arn: "arn:aws:iam::123456789012:role/karpenter-iam-role"
+      eks.amazonaws.com/role-arn: 
 valuesfrom:
   - overwritepath: "clusterName"
     defaultvalue: "dev-eks-cluster"
@@ -21,6 +21,11 @@ valuesfrom:
     defaultvalue: ""
     values: ""
     description: "Endpoint of the Cluster"  
+
+  - overwritepath: "serviceAccount.annotations.eks.amazonaws.com/role-arn"
+    defaultvalue: "arn:aws:iam::123456789012:role/karpenter-iam-role"
+    values: ""
+    description: "Karpenter IAM role"  
 
   - overwritepath: "aws.defaultInstanceProfile"
     defaultvalue: "KarpenterNodeInstanceProfile-dev-eks-cluster"
