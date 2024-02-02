@@ -1,0 +1,49 @@
+name: "karpenter"
+version: "0.16.3"
+description: "A Helm chart for Karpenter, an open-source node provisioning project built for Kubernetes."
+logoimageid: "c752a1ba-2fe2-4f08-ad80-669f552c4813"
+license: ""
+repository:
+  sourcerefname: "karpenter"
+  url: "https://charts.karpenter.sh"
+  verified_publisher: false
+values:
+  serviceAccount:
+    annotations:
+      eks\.amazonaws\.com/role-arn: "arn:aws:iam::123456789012:role/karpenter-iam-role"
+valuesfrom:
+  - overwritepath: "clusterName"
+    defaultvalue: "dev-eks-cluster"
+    values: ""
+    description: "Name of the Cluster"   
+
+  - overwritepath: "clusterEndpoint"
+    defaultvalue: ""
+    values: ""
+    description: "Endpoint of the Cluster"  
+
+  - overwritepath: "aws.defaultInstanceProfile"
+    defaultvalue: "KarpenterNodeInstanceProfile-dev-eks-cluster"
+    values: ""
+    description: "Default Instance Profile"  
+  
+  - overwritepath: "controller.resources.limits.cpu"
+    defaultvalue: "1"
+    values: "1"
+    description: "Controller resources limits CPU"  
+  
+  - overwritepath: "controller.resources.limits.memory"
+    defaultvalue: "1Gi"
+    values: "1Gi"
+    description: "Controller resources limits Memory"  
+    
+  - overwritepath: "controller.resources.requests.cpu"
+    defaultvalue: "1"
+    values: "1"
+    description: "Controller resources requests CPU"  
+  
+  - overwritepath: "controller.resources.requests.memory"
+    defaultvalue: "1Gi"
+    values: "1Gi"
+    description: "Controller resources requests Memory"  
+    
