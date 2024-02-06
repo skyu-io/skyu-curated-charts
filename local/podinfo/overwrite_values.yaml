@@ -12,20 +12,3 @@ valuesfrom:
     defaultvalue: "2"
     values: ""
     description: "Replica Count"  
-
-  - overwritepath: "s3.enabled"
-    defaultvalue: "false"
-    values: "true"
-    description: "s3 Bucket Enabled" 
-
-  - overwritepath: "s3.bucket"
-    dependsOn: "s3.enabled"
-    defaultvalue: "dev-eks-s3-bucket"
-    values: ""
-    description: "s3 Bucket Name"
-
-  - overwritepath: "s3.region"
-    dependsOn: "s3.enabled"
-    defaultvalue: "us-east-1"
-    values: ""
-    description: "s3 Bucket Region"  
