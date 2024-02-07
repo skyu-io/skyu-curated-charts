@@ -43,11 +43,6 @@ valuesfrom:
     values: "1Gi"
     description: "Controller resources requests Memory"  
 
-  - overwritepath: "serviceAccount.create"
-    defaultvalue: "true"
-    values: "false"
-    description: "Create Service Account"
-
   - overwritepath: "replicas"
     defaultvalue: "2"
     values: "2"
