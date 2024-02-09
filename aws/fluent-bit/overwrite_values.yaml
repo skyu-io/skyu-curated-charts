@@ -33,29 +33,4 @@ valuesfrom:
     values: "100Mi"
     description: "Resource Request Memory" 
 
-  - overwritepath: "s3.enabled"
-    defaultvalue: "false"
-    values: "true"
-    description: "s3 Bucket Enabled" 
-
-  - overwritepath: "s3.bucket"
-    defaultvalue: "dev-eks-s3-bucket"
-    values: ""
-    description: "s3 Bucket Name"
-
-  - overwritepath: "s3.region"
-    defaultvalue: "us-east-1"
-    values: ""
-    description: "s3 Bucket Region" 
-    
-secrets:
-  - overwritepath: "s3.roleArn"
-    defaultvalue: "arn:aws:iam::123456789012:role/s3-access-role"
-    values: ""
-    description: "s3 Bucket Role Arn" 
-
-  - overwritepath: "cloudWatchLogs.roleArn"
-    defaultvalue: arn:aws:iam::123456789012:role/cloud-watch-role"
-    values: ""
-    description: "CloudWatch Logs Role ARN" 
 
