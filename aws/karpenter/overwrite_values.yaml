@@ -1,3 +1,4 @@
+displayname: "karpenter"
 name: "karpenter"
 version: "0.16.3"
 description: "A Helm chart for Karpenter, an open-source node provisioning project built for Kubernetes."

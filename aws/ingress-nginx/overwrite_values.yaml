@@ -1,3 +1,4 @@
+displayname: "ingress-nginx"
 name: "ingress-nginx"
 version: "4.9.0"
 description: "Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer"

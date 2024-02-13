@@ -1,3 +1,4 @@
+displayname: "redis"
 name: "redis"
 version: "18.9.0"
 description: "Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."

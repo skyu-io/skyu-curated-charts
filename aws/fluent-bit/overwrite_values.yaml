@@ -1,3 +1,4 @@
+displayname: "aws-for-fluent-bit"
 name: "aws-for-fluent-bit"
 version: "0.1.32"
 description: "A Helm chart to deploy aws-for-fluent-bit project"

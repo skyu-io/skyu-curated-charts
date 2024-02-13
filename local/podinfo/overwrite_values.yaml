@@ -1,3 +1,4 @@
+displayname: "podinfo"
 name: "podinfo"
 version: "6.5.4"
 description: "Podinfo Helm chart for Kubernetes"

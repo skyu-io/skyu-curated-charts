@@ -1,3 +1,4 @@
+displayname: "opencost"
 name: "opencost"
 version: "1.29.1"
 description: "OpenCost and OpenCost UI"

@@ -1,3 +1,4 @@
+displayname: "aws-load-balancer-controller"
 name: "aws-load-balancer-controller"
 version: "1.7.1"
 description: "AWS Load Balancer Controller Helm chart for Kubernetes"
