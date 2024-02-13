@@ -1,0 +1,80 @@
+name: "prometheus"
+version: "25.4.0"
+description: "AWS Managed Prometheus is a monitoring system and time series database."
+logoimageid: "0503add5-3fce-4b63-bbf3-b9f649512a86"
+license: "Apache-2.0"
+repository:
+  sourcerefname: "prometheus-community"
+  url: "https://prometheus-community.github.io/helm-charts"
+  verified_publisher: true
+values:
+  serviceAccounts:
+    server:
+      annotations:
+        eks.amazonaws.com/role-arn: "${IAM_PROXY_PROMETHEUS_ROLE_ARN}"
+
+valuesfrom:
+  - overwritepath: "serviceAccounts.server.name"
+    defaultvalue: ""
+    values: "amp-iamproxy-ingest-service-account"
+    description: "Service Account Name"
+
+  - overwritepath: "server.remoteWrite.url"
+    defaultvalue: ""
+    values: "https://aps-workspaces.${REGION}.amazonaws.com/workspaces/${WORKSPACE_ID}/api/v1/remote_write"
+    description: "Remote Write URL"
+
+  - overwritepath: "server.remoteWrite.signv4.region"
+    defaultvalue: "us-east-1"
+    values: "us-east-1"
+    description: "Region"
+
+  - overwritepath: "server.remoteWrite.queue_config.max_samples_per_send"
+    defaultvalue: "1000"
+    values: "1000"
+    description: "Queue Config Max per Samples per Send"
+
+  - overwritepath: "server.remoteWrite.queue_config.max_shards"
+    defaultvalue: "200"
+    values: "200"
+    description: "Queue Config Max Shards"
+
+  - overwritepath: "server.remoteWrite.queue_config.capacity"
+    defaultvalue: ""
+    values: "2500"
+    description: "Queue Config Capacity"
+
+  - overwritepath: "prometheus-pushgateway.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "prometheus-pushgateway enabled" 
+
+  - overwritepath: "alertmanager.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "alertmanager enabled" 
+    
+  - overwritepath: "server.priorityClassName"
+    defaultvalue: "infra-high-priority"
+    values: "infra-high-priority"
+    description: "priority ClassName" 
+
+  - overwritepath: "server.persistentVolume.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "persistent Volume" 
+
+  - overwritepath: "server.global.scrape_interval"
+    defaultvalue: "1m"
+    values: "30s"
+    description: "global scrape_interval" 
+
+  - overwritepath: "server.statefulSet.enabled"
+    defaultvalue: "false"
+    values: "false"
+    description: "statefulSet Enabled" 
+
+  - overwritepath: "server.service.servicePort"
+    defaultvalue: "80"
+    values: "9090"
+    description: "Service Port" 

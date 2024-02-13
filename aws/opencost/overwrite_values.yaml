@@ -1,0 +1,104 @@
+name: "opencost"
+version: "1.29.1"
+description: "OpenCost and OpenCost UI"
+logoimageid: "713df283-63b6-498f-abf1-f0631c201511"
+license: ""
+repository:
+  sourcerefname: "opencost"
+  url: "https://opencost.github.io/opencost-helm-chart/"
+  verified_publisher: false
+valuesfrom:
+  - overwritepath: "opencost.ui.enabled"
+    defaultvalue: "true"
+    values: "true"
+    description: "Enable OpenCost UI"   
+
+  - overwritepath: "opencost.customPricing.enabled"
+    defaultvalue: "false"
+    values: "true"
+    description: "Enable Custom Pricing"  
+
+  - overwritepath: "opencost.customPricing.provider"
+    defaultvalue: "custom"
+    values: "aws"
+    description: "Provider"  
+
+  - overwritepath: "opencost.customPricing.costModel.description"
+    defaultvalue: ""
+    values: ""
+    description: "Description"
+
+  - overwritepath: "opencost.customPricing.costModel.CPU"
+    defaultvalue: "0.031611"
+    values: "0.031611"
+    description: "CPU"
+
+  - overwritepath: "opencost.customPricing.costModel.spotCPU"
+    defaultvalue: "0.006655"
+    values: "0.006655"
+    description: "Spot CPU"
+
+  - overwritepath: "opencost.customPricing.costModel.RAM"
+    defaultvalue: "0.004237"
+    values: "0.004237"
+    description: "RAM"
+
+  - overwritepath: "opencost.customPricing.costModel.GPU"
+    defaultvalue: "0.95"
+    values: "0.95"
+    description: "GPU"
+
+  - overwritepath: "opencost.customPricing.costModel.spotRAM"
+    defaultvalue: "0.000892"
+    values: "0.000892"
+    description: "Spot RAM"
+
+  - overwritepath: "opencost.customPricing.costModel.storage"
+    defaultvalue: "0.000138888889"
+    values: "0.000138888889"
+    description: "Storage"
+
+  - overwritepath: "opencost.customPricing.costModel.zoneNetworkEgress"
+    defaultvalue: "0.01"
+    values: "0.01"
+    description: "Zone Network Egress"
+
+  - overwritepath: "opencost.customPricing.costModel.regionNetworkEgress"
+    defaultvalue: "0.01"
+    values: "0.01"
+    description: "Region Network Egress"
+
+  - overwritepath: "opencost.customPricing.costModel.internetNetworkEgress"
+    defaultvalue: "0.143"
+    values: "0.143"
+    description: "Internet Network Egress"
+
+  - overwritepath: "opencost.customPricing.costModel.spotLabel"
+    defaultvalue: "kops.k8s.io/instancegroup"
+    values: "kops.k8s.io/instancegroup"
+    description: "Spot Label"
+
+  - overwritepath: "opencost.customPricing.costModel.spotLabelValue"
+    defaultvalue: "spotinstance-nodes"
+    values: "spotinstance-nodes"
+    description: "Spot Label Value"
+
+  - overwritepath: "opencost.customPricing.costModel.awsSpotDataRegion"
+    defaultvalue: "us-east-1"
+    values: "us-east-1"
+    description: "AWS Spot Data Region"
+
+  - overwritepath: "opencost.customPricing.costModel.awsSpotDataBucket"
+    defaultvalue: "my-spot-bucket"
+    values: "my-spot-bucket"
+    description: "AWS Spot Data Bucket Name"
+
+  - overwritepath: "opencost.customPricing.costModel.awsSpotDataPrefix"
+    defaultvalue: "spot_pricing_prefix"
+    values: "spot_pricing_prefix"
+    description: "AWS Spot Data Prefix"
+
+  - overwritepath: "opencost.customPricing.costModel.projectID"
+    defaultvalue: "012345678901"
+    values: ""
+    description: "Project ID"
