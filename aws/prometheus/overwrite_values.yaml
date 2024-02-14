@@ -9,13 +9,19 @@ repository:
   url: "https://prometheus-community.github.io/helm-charts"
   verified_publisher: true
 valuesfrom:
-  - overwritepath: "alertmanager.persistence.size"
-    defaultvalue: "2Gi"
-    values: "2Gi"
-    description: "AlertManager persistent size"
 
   - overwritepath: "server.persistentVolume.size"
     defaultvalue: "8Gi"
     values: "8Gi"
     description: "Server persistent volume size"
+  
+  - overwritepath: "prometheus-pushgateway.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "Enable Prometheus PushGateway"
+
+  - overwritepath: "alertmanager.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "Enable Prometheus PushGateway"
 
