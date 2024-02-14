@@ -13,5 +13,10 @@ valuesfrom:
     defaultvalue: "eks-dev-cluser"
     values: ""
     description: "Name of the Cluster"
+  
+  - overwritepath: "replicaCount"
+    defaultvalue: "2"
+    values: "2"
+    description: "Replica Count"
 
   

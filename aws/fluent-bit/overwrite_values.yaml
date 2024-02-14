@@ -21,7 +21,7 @@ valuesfrom:
 
   - overwritepath: "resources.limits.memory"
     defaultvalue: "250Mi"
-    values: "1Gi"
+    values: "250Mi"
     description: "Resource Limit Memory" 
 
   - overwritepath: "resources.requests.cpu"
