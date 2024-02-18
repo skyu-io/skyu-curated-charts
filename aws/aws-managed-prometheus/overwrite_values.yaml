@@ -51,31 +51,37 @@ valuesfrom:
     description: "prometheus-pushgateway enabled" 
 
   - overwritepath: "alertmanager.enabled"
+    id: "alertmanager"
     defaultvalue: "true"
     values: "false"
     description: "alertmanager enabled" 
     
   - overwritepath: "server.priorityClassName"
+    dependson: "alertmanger"
     defaultvalue: "infra-high-priority"
     values: "infra-high-priority"
     description: "priority ClassName" 
 
   - overwritepath: "server.persistentVolume.enabled"
+    dependson: "alertmanger"
     defaultvalue: "true"
     values: "false"
     description: "persistent Volume" 
 
   - overwritepath: "server.global.scrape_interval"
+    dependson: "alertmanger"
     defaultvalue: "1m"
     values: "30s"
     description: "global scrape_interval" 
 
   - overwritepath: "server.statefulSet.enabled"
+    id: "statefulset"
     defaultvalue: "false"
     values: "false"
     description: "statefulSet Enabled" 
 
   - overwritepath: "server.service.servicePort"
+    dependson: "statefulset"
     defaultvalue: "80"
     values: "9090"
     description: "Service Port" 
