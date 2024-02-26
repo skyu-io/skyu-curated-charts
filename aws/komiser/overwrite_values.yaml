@@ -1,0 +1,15 @@
+displayname: "komiser"
+name: "komiser"
+version: "3.1.10"
+description: "Komiser"
+logoimageid: "713df283-63b6-498f-abf1-f0631c201511"
+license: ""
+repository:
+  sourcerefname: "komiser"
+  url: "https://github.com/sanujan1020/komiser"
+  verified_publisher: false
+valuesfrom:
+  - overwritepath: "aws.region"
+    defaultvalue: "us-east-1"
+    values: "us-east-1"
+    description: "Region"   
