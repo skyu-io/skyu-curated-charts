@@ -7,14 +7,12 @@ license: "Apache-2.0"
 repository:
   sourcerefname: "prometheus-community"
   url: "https://prometheus-community.github.io/helm-charts"
-  verified_publisher: true
+  verified_publisher: true\
+values:
+  server:
+    ingress:
+      hosts: []
 valuesfrom:
-
-  - overwritepath: "server.persistentVolume.size"
-    defaultvalue: "8Gi"
-    values: "8Gi"
-    description: "Server persistent volume size"
-  
   - overwritepath: "prometheus-pushgateway.enabled"
     defaultvalue: "true"
     values: "false"
@@ -24,4 +22,21 @@ valuesfrom:
     defaultvalue: "true"
     values: "false"
     description: "Enable Prometheus PushGateway"
+  
+  - overwritepath: "server.ingress.enabled"
+    defaultvalue: "false"
+    values: "true"
+    description: "Enable Server Ingress"
+
+  - overwritepath: "server.persistentVolume.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "Enable Server Persistent Volume"
+
+  - overwritepath: "server.servicePort"
+    defaultvalue: "80"
+    values: "9090"
+    description: "Server Service Port"
+
+  
 
