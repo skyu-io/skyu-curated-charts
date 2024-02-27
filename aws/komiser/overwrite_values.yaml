@@ -1,0 +1,23 @@
+displayname: "komiser"
+name: "komiser"
+version: "3.1.10"
+description: "Komiser is an open-source platform loved by cloud experts and developers. Connect your cloud accounts to get detailed insights on your cloud infrastructure."
+logoimageid: "713df283-63b6-498f-abf1-f0631c201511"
+license: "Apache-2.0"
+repository:
+  sourcerefname: "komiser-eks"
+  url: "https://sanu1020.github.io/komiser-eks/"
+  verified_publisher: false
+valuesfrom:
+  - overwritepath: "aws.arn"
+    defaultvalue: "arn:aws:iam::0123456789:role/test-komiser-iam-role"
+    values: ""
+    description: "Role ARN for an access for your aws account"   
+
+  - overwritepath: "aws.serviceaccountarn"
+    defaultvalue: "arn:aws:iam::0123456789:role/komiser-iam-role"
+    values: ""
+    description: "Role ARN for service account"
+
+                 
+    
