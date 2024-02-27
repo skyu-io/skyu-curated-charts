@@ -19,10 +19,6 @@ valuesfrom:
     values: "false"
     description: "Enable Prometheus PushGateway"
   
-  - overwritepath: "server.ingress.enabled"
-    defaultvalue: "false"
-    values: "true"
-    description: "Enable Server Ingress"
 
   - overwritepath: "server.servicePort"
     defaultvalue: "80"
