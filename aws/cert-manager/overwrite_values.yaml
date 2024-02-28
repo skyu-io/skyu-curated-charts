@@ -22,6 +22,31 @@ valuesfrom:
   - overwritepath: "prometheus.enabled"
     defaultvalue: "true"
     values: "true"
-    description: "Enable Prometheus"  
+    description: "Enable Prometheus"
+
+  - overwritepath: "webhook.timeoutSeconds"
+    defaultvalue: "30"
+    values: "30"
+    description: "Webhook Timeout Seconds"  
+  
+  - overwritepath: "global.leaderElection.namespace"
+    defaultvalue: "kube-system"
+    values: "kube-system"
+    description: "Global Leader Election Namespace" 
+
+  - overwritepath: "global.logLevel"
+    defaultvalue: "2"
+    values: "2"
+    description: "Global LogLevel"   
+
+  - overwritepath: "global.priorityClassName"
+    defaultvalue: ""
+    values: ""
+    description: "Global Priority ClassName"
+
+  - overwritepath: "global.podSecurityPolicy.enabled"
+    defaultvalue: "false"
+    values: "false"
+    description: "Enable Global Pod Security Policy"      
   
  
