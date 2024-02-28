@@ -1,0 +1,27 @@
+displayname: "cert-manager"
+name: "cert-manager"
+version: "1.14.3"
+description: "A Helm chart for cert-manager"
+logoimageid: "6d75ecff-a328-495b-a7fc-12cd84499974"
+license: "Apache-2.0"
+repository:
+  sourcerefname: "cert-manager"
+  url: "https://charts.jetstack.io"
+  verified_publisher:  true
+valuesfrom:
+  - overwritepath: "replicaCount"
+    defaultvalue: "1"
+    values: "1"
+    description: "Replica Count"   
+
+  - overwritepath: "cainjector.enabled"
+    defaultvalue: "true"
+    values: "true"
+    description: "Enable CA Injector"  
+
+  - overwritepath: "prometheus.enabled"
+    defaultvalue: "true"
+    values: "true"
+    description: "Enable Prometheus"  
+  
+ 
