@@ -9,7 +9,7 @@ depends_on: ""
 promocard_title: "Create role on AWS"
 promocard_desc: "Create your role on AWS as its a mandatory step to create komiser"
 documentaion_url: "https://docs.komiser.io/configuration/cloud-providers/aws"
-parameters: ["Account ID", "OIDC Provider ID", "Region", "Namespace"]
+parameters: ["AWS Account ID", "OIDC Provider ID", "Region", "Namespace"]
 placeholders: ["01234567809", "7B8B226B1EF0A32452BV4DB1116D184","us-east-1","komiser"]
 info: ["","","","Make sure to provide the namespace you will deploy the helm chart in. If deployed in any other namespace, you will see sts:AssumeRoleWithWebIdentity failure messages in the pod logs."]
 repository:
