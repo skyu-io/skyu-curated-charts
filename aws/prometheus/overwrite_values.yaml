@@ -7,7 +7,7 @@ license: "Apache-2.0"
 cloudformation_template: "https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://cloudformation-test-bucket-curated.s3.amazonaws.com/ebs_attach_policy_stack.yaml&stackName=ebsAttachPolicyStack"
 depends_on: ""
 promocard_title: "Create role on AWS"
-promocard_desc: "Create your role on AWS as its a mandatory step to create prometheus without Volume Persistance Claim error.If you already installed EBS CSI Driver addon and attach the policy in your Node Group ARN or not going enable persistent volume then skip it."
+promocard_desc: "Create your role on AWS as its a mandatory step to create prometheus without Volume Persistance Claim error.If you already installed EBS CSI Driver addon and attach the policy in your Node Group ARN, or if you're not enabling persistent volume, you can skip this step."
 documentaion_url: "https://stackoverflow.com/questions/50951515/persistent-volume-error-when-installing-prometheus-using-helm"
 parameters: ["NodeIAMroleName"]                                   
 placeholders: ["initial-eks-node-group-202432040435200845000042001"]
