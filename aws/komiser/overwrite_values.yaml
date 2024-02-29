@@ -7,7 +7,7 @@ license: "Apache-2.0"
 cloudformation_template: "https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://cloudformation-test-bucket-curated.s3.amazonaws.com/komiser_stack.yaml&stackName=komiserAccessStack"
 depends_on: ""
 promocard_title: "Create role on AWS"
-promocard_desc: "Create your role on AWS as its a mandatory step to create komiser"
+promocard_desc: "Create your role on AWS as its a mandatory step to create komiser. Additionaly Create and IAM OIDC provider for your cluster with the Audience - sts.amazonaws.com, if not already exists.(https://us-east-1.console.aws.amazon.com/iam/home#/identity_providers/create)"
 documentaion_url: "https://docs.komiser.io/configuration/cloud-providers/aws"
 parameters: ["Account ID", "OIDC Provider ID", "Region", "Namespace"]                                   
 placeholders: ["01234567809", "7B8B226B1EF0A32452BV4DB1116D184","us-east-1","komiser"]
