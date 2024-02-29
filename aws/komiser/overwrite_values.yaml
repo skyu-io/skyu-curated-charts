@@ -18,14 +18,14 @@ repository:
   verified_publisher: false
 valuesfrom:
   - overwritepath: "aws.arn"
-    defaultvalue: "arn:aws:iam::0123456789:role/test-komiser-iam-role"
+    defaultvalue: "arn:aws:iam::0123456789:role/komiser-access-iam-role"
     values: ""
     description: "Role ARN for an access for your aws account"   
 
   - overwritepath: "aws.serviceaccountarn"
     defaultvalue: "arn:aws:iam::0123456789:role/komiser-iam-role"
     values: ""
-    description: "Role ARN for service account"
+    description: "Role ARN for service account which is the role arn created in previous Create role on AWS step"
 
                  
     
