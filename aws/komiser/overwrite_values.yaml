@@ -25,7 +25,7 @@ valuesfrom:
   - overwritepath: "aws.serviceaccountarn"
     defaultvalue: "arn:aws:iam::0123456789:role/komiser-iam-role"
     values: ""
-    description: "Role ARN for service account which is the role arn created in previous Create role on AWS step"
+    description: "Role ARN created in previous create role on AWS step"
 
                  
     
