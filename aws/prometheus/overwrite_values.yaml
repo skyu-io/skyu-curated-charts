@@ -11,7 +11,7 @@ promocard_desc: "Create your role on AWS as its a mandatory step to create prome
 documentaion_url: "https://stackoverflow.com/questions/50951515/persistent-volume-error-when-installing-prometheus-using-helm"
 parameters: ["Node IAM role Name"]                                   
 placeholders: ["initial-eks-node-group-202432040435200845000042001"]
-info: ["Node Group IAM Role Name."]
+info: [""]
 repository:
   sourcerefname: "prometheus-community"
   url: "https://prometheus-community.github.io/helm-charts"
