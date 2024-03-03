@@ -16,6 +16,11 @@ repository:
   sourcerefname: "prometheus-community"
   url: "https://prometheus-community.github.io/helm-charts"
   verified_publisher: true
+values: 
+  server:
+    ingress:
+      hosts:
+        - "prometheus.skyu.sandbox.insighture.io"
 valuesfrom:
   - overwritepath: "prometheus-pushgateway.enabled"
     defaultvalue: "true"
