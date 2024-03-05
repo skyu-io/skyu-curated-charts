@@ -22,6 +22,11 @@ values:
         service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
         service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
 valuesfrom:
+  - overwritepath: "controller.replicaCount"
+    defaultvalue: "1"
+    values: "2" 
+    description: "Replica Count"
+    
   - overwritepath: "controller.minAvailable"
     defaultvalue: "1"
     values: "1" 
@@ -86,9 +91,4 @@ valuesfrom:
     defaultvalue: "50"
     values: "75"
     description: "Target CPU Utilization Percentage"
-
-secrets:
-  - overwritepath: "controller.replicaCount"
-    defaultvalue: "1"
-    values: "2" 
-    description: "Replica Count"
+  
