@@ -23,7 +23,7 @@ valuesfrom:
     description: "Komiser Access Role ARN"
 
   - overwritepath: "aws.arn"
-    defaultvalue: "arn:aws:iam::0123456789:role/komiser-access-iam-role"
+    defaultvalue: "arn:aws:iam::0123456789:role/aws-access-iam-role"
     values: ""
     description: "AWS Account Access Role ARN"   
 
