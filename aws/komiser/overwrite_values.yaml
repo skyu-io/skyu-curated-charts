@@ -17,11 +17,11 @@ repository:
   url: "https://sanu1020.github.io/komiser-eks/"
   verified_publisher: false
 valuesfrom:
-   - overwritepath: "aws.serviceaccountarn"
+  - overwritepath: "aws.serviceaccountarn"
     defaultvalue: "arn:aws:iam::0123456789:role/komiser-iam-role"
     values: ""
     description: "Komiser Access Role ARN"
-    
+
   - overwritepath: "aws.arn"
     defaultvalue: "arn:aws:iam::0123456789:role/komiser-access-iam-role"
     values: ""
