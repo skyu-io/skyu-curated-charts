@@ -758,12 +758,12 @@ values:
       podMetadata: {}
       podMonitorNamespaceSelector: {}
       podMonitorSelector: {}
-      podMonitorSelectorNilUsesHelmValues: true
+      podMonitorSelectorNilUsesHelmValues: false
       portName: http-web
       priorityClassName: ''
       probeNamespaceSelector: {}
       probeSelector: {}
-      probeSelectorNilUsesHelmValues: true
+      probeSelectorNilUsesHelmValues: false
       prometheusExternalLabelName: ''
       prometheusExternalLabelNameClear: false
       prometheusRulesExcludedFromEnforce: []
@@ -781,11 +781,11 @@ values:
       routePrefix: "/"
       ruleNamespaceSelector: {}
       ruleSelector: {}
-      ruleSelectorNilUsesHelmValues: true
+      ruleSelectorNilUsesHelmValues: false
       sampleLimit: false
       scrapeConfigNamespaceSelector: {}
       scrapeConfigSelector: {}
-      scrapeConfigSelectorNilUsesHelmValues: true
+      scrapeConfigSelectorNilUsesHelmValues: false
       scrapeInterval: ''
       scrapeTimeout: ''
       secrets: []
@@ -798,7 +798,7 @@ values:
           type: RuntimeDefault
       serviceMonitorNamespaceSelector: {}
       serviceMonitorSelector: {}
-      serviceMonitorSelectorNilUsesHelmValues: true
+      serviceMonitorSelectorNilUsesHelmValues: false
       shards: 1
       storageSpec: {}
       thanos: {}
@@ -1261,7 +1261,7 @@ values:
       routePrefix: "/"
       ruleNamespaceSelector: {}
       ruleSelector: {}
-      ruleSelectorNilUsesHelmValues: true
+      ruleSelectorNilUsesHelmValues: false
       securityContext:
         fsGroup: 2000
         runAsGroup: 2000
@@ -1276,34 +1276,4 @@ values:
       volumes: []
   windowsMonitoring:
     enabled: false
-valuesfrom:
-  - overwritepath: "prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues"
-    defaultvalue: "true"
-    values: "false"
-    description: "Prometheus podMonitorSelector NilUsesHelmValues" 
-
-  - overwritepath: "prometheus.prometheusSpec.probeSelectorNilUsesHelmValues"
-    defaultvalue: "true"
-    values: "false"
-    description: "Prometheus probeSelector NilUsesHelmValues" 
-
-  - overwritepath: "prometheus.prometheusSpec.ruleSelectorNilUsesHelmValues"
-    defaultvalue: "true"
-    values: "false"
-    description: "Prometheus ruleSelector NilUsesHelmValues" 
-
-  - overwritepath: "prometheus.prometheusSpec.scrapeConfigSelectorNilUsesHelmValues"
-    defaultvalue: "true"
-    values: "false"
-    description: "Prometheus scrapeConfigSelector NilUsesHelmValues" 
-
-  - overwritepath: "prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues"
-    defaultvalue: "true"
-    values: "false"
-    description: "Prometheus serviceMonitorSelector NilUsesHelmValues" 
-
-  - overwritepath: "thanosRuler.thanosRulerSpec.ruleSelectorNilUsesHelmValues"
-    defaultvalue: "true"
-    values: "false"
-    description: "thanosRuler ruleSelector NilUsesHelmValues"
 
