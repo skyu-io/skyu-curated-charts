@@ -1,0 +1,30 @@
+displayname: "redis"
+name: "redis"
+version: "18.9.0"
+description: "Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."
+logoimageid: "d9af69e0-4dd9-4f44-aec5-43684b389518"
+license: "Apache-2.0"
+repository:
+  sourcerefname: "bitnami"
+  url: "https://charts.bitnami.com/bitnami"
+  verified_publisher: true
+valuesfrom:
+  - overwritepath: "containerPorts.http"
+    defaultvalue: "8080"
+    values: ""
+    description: "http container port"   
+
+  - overwritepath: "service.type"
+    defaultvalue: "LoadBalancer"
+    values: ""
+    description: "Service Type"  
+
+  - overwritepath: "service.ports.http"
+    defaultvalue: "80"
+    values: ""
+    description: "Service http port"  
+  
+  - overwritepath: "service.ports.https"
+    defaultvalue: "443"
+    values: ""
+    description: "Service https port"
