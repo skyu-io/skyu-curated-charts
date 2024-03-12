@@ -33,17 +33,7 @@ valuesfrom:
     defaultvalue: "200Mi"
     values: "200Mi"
     description: "Requests Memory"    
-
-  - overwritepath: "serviceAccount.create"
-    defaultvalue: "true"
-    values: "true"
-    description: "Service Account Create"    
-  
-  - overwritepath: "serviceAccount.name"
-    defaultvalue: "dev"
-    values: ""
-    description: "Service Account Name"   
-
+ 
   - overwritepath: "statsd.enabled"
     defaultvalue: "false"
     values: "false"
