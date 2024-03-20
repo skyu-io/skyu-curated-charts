@@ -11,8 +11,8 @@ repository:
 valuesfrom:
   - overwritepath: "cloudWatchLogs.logGroupName"
     defaultvalue: "/aws/eks/fluentbit-cloudwatch/logs"
-    values: ""
-    description: "CloudWatch Logs Logs Group Name" 
+    values: "/aws/eks/fluentbit-cloudwatch/logs"
+    description: "CloudWatch Logs Group Name" 
 
   - overwritepath: "cloudWatchLogs.region"
     defaultvalue: "us-east-1"
