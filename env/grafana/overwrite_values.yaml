@@ -4,7 +4,6 @@ version: "7.3.3"
 description: "Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer"
 logoimageid: "b4fed1a7-6c8f-4945-b99d-096efa3e4116"
 license: "Apache-2.0"
-cluster_type: ["AWS", "Local Clusters"]
 repository:
   sourcerefname: "grafana"
   url: "https://grafana.github.io/helm-charts"

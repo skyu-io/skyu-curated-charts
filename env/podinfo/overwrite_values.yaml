@@ -4,7 +4,6 @@ version: "6.5.4"
 description: "Podinfo Helm chart for Kubernetes"
 logoimageid: "d9af69e0-4dd9-4f44-aec5-43684b389518"
 license: "Apache-2.0"
-cluster_type: ["AWS", "Local Clusters"]
 repository:
   sourcerefname: "podinfo"
   url: "https://stefanprodan.github.io/podinfo"

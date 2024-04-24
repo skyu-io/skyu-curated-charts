@@ -4,7 +4,6 @@ version: "2.0.1"
 description: "A Helm chart that sets up Kubecost, Prometheus, and Grafana to monitor cloud costs."
 logoimageid: "713df283-63b6-498f-abf1-f0631c201511"
 license: ""
-cluster_type: ["AWS"]
 repository:
   sourcerefname: "kubecost"
   url: "https://kubecost.github.io/cost-analyzer"

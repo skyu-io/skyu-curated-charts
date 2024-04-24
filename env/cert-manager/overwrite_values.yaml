@@ -4,7 +4,6 @@ version: "1.14.3"
 description: "A Helm chart for cert-manager"
 logoimageid: "6d75ecff-a328-495b-a7fc-12cd84499974"
 license: "Apache-2.0"
-cluster_type: ["AWS", "Local Clusters"]
 repository:
   sourcerefname: "cert-manager"
   url: "https://charts.jetstack.io"
