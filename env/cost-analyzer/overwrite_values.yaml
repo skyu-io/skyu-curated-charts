@@ -1,0 +1,85 @@
+displayname: "cost-analyzer"
+name: "cost-analyzer"
+version: "2.0.1"
+description: "A Helm chart that sets up Kubecost, Prometheus, and Grafana to monitor cloud costs."
+logoimageid: "713df283-63b6-498f-abf1-f0631c201511"
+license: ""
+cluster_type: ["AWS"]
+repository:
+  sourcerefname: "kubecost"
+  url: "https://kubecost.github.io/cost-analyzer"
+  verified_publisher: false
+values:
+  ingress:
+    annotations: 
+      ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+valuesfrom:
+  - overwritepath: "ingress.className"
+    defaultvalue: "nginx-private"
+    values: "nginx-private"
+    description: "Ingress Classname"   
+
+  - overwritepath: "ingress.enabled"
+    defaultvalue: "false"
+    values: "true"
+    description: "Ingress Enabled"
+
+  - overwritepath: "global.grafana.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "Grafana Enabled"   
+
+  - overwritepath: "global.grafana.proxy"
+    defaultvalue: "true"
+    values: "false"
+    description: "Grafana Proxy"  
+  
+  - overwritepath: "kubecostFrontend.resources.requests.cpu"
+    defaultvalue: "10m"
+    values: "10m"
+    description: "Kubecost Frontend Resource Requests CPU"  
+
+  - overwritepath: "kubecostFrontend.resources.requests.memory"
+    defaultvalue: "55Mi"
+    values: "55Mi"
+    description: "Kubecost Frontend Resource Requests Memory" 
+
+  - overwritepath: "kubecostModel.warmCache"
+    defaultvalue: "false"
+    values: "true"
+    description: "KubecostModel WarmCache"   
+
+  - overwritepath: "kubecostModel.etlDailyStoreDurationDays"
+    defaultvalue: "91"
+    values: "120"
+    description: "KubecostModel etl Daily Store Duration Days"    
+
+  - overwritepath: "kubecostModel.maxQueryConcurrency"
+    defaultvalue: "5"
+    values: "5"
+    description: "KubecostModel max Query Concurrency" 
+
+  - overwritepath: "kubecostModel.resources.requests.cpu"
+    defaultvalue: "200m"
+    values: "200m"
+    description: "Kubecost Frontend Resource Requests CPU"
+
+  - overwritepath: "kubecostModel.resources.requests.memory"
+    defaultvalue: "55Mi"
+    values: "55Mi"
+    description: "Kubecost Frontend Resource Requests Memory"    
+
+  - overwritepath: "forecasting.resources.requests.memory"
+    defaultvalue: "300Mi"
+    values: "300Mi"
+    description: "Forecasting Resource Requests Memory"
+
+  - overwritepath: "forecasting.resources.requests.cpu"
+    defaultvalue: "200m"
+    values: "200m"
+    description: "Forecasting Resource Requests Memory"
+
+                 
+    

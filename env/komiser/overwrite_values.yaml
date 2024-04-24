@@ -1,0 +1,34 @@
+displayname: "komiser"
+name: "komiser"
+version: "3.1.10"
+description: "Komiser is an open-source platform loved by cloud experts and developers. Connect your cloud accounts to get detailed insights on your cloud infrastructure."
+logoimageid: "713df283-63b6-498f-abf1-f0631c201511"
+license: "Apache-2.0"
+cluster_type: ["AWS"]
+cloudformation_template: "https://cloudformation-test-bucket-curated.s3.amazonaws.com/komiser_stack.yaml&stackName=komiserAccessStack"
+depends_on: ""
+promocard_title: "Create role on AWS"
+promocard_desc: "Create your role on AWS as its a mandatory step to create komiser. Additionaly Create an IAM OIDC provider for your cluster with the Audience - sts.amazonaws.com, if not already exists."
+documentaion_url: "https://docs.komiser.io/configuration/cloud-providers/aws"
+parameters: ["Account ID", "OIDC Provider ID", "Region", "Namespace"]                                   
+placeholders: ["01234567809", "7B8B226B1EF0A32452BV4DB1116D184","us-east-1","komiser"]
+info: ["","","","Make sure to provide the namespace you will deploy the helm chart in. If deployed in any other namespace, you will see sts:AssumeRoleWithWebIdentity failure messages in the pod logs."]
+repository:
+  sourcerefname: "komiser-eks"
+  url: "https://sanu1020.github.io/komiser-eks/"
+  verified_publisher: false
+valuesfrom:
+  - overwritepath: "aws.serviceaccountarn"
+    defaultvalue: "arn:aws:iam::0123456789:role/komiser-iam-role"
+    values: ""
+    description: "Komiser Access Role ARN"
+
+  - overwritepath: "aws.arn"
+    defaultvalue: "arn:aws:iam::0123456789:role/aws-access-iam-role"
+    values: ""
+    description: "AWS Account Access Role ARN"   
+
+ 
+
+                 
+    

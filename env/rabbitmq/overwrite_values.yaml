@@ -1,0 +1,43 @@
+displayname: "rabbitmq"
+name: "rabbitmq"
+version: "12.15.0"
+description: "RabbitMQ is an open source general-purpose message broker that is designed for consistent, highly-available messaging scenarios (both synchronous and asynchronous)."
+logoimageid: "d9af69e0-4dd9-4f44-aec5-43684b389518"
+license: "Apache-2.0"
+cluster_type: ["AWS", "Local Clusters"]
+repository:
+  sourcerefname: "bitnami"
+  url: "https://charts.bitnami.com/bitnami"
+  verified_publisher: true
+values:
+  ingress:
+    annotations: {}
+    enabled: false
+    existingSecret: ""
+    extraHosts: []
+    extraPaths: []
+    extraRules: []
+    extraTls: []
+    hostname: "rabbitmq.local"
+    ingressClassName: ""
+    path: "/"
+    pathType: "ImplementationSpecific"
+    secrets: []
+    selfSigned: false
+    tls: false
+valuesfrom:
+  - overwritepath: "replicaCount"
+    defaultvalue: "1"
+    values: "1"
+    description: "Replica Count" 
+    
+  - overwritepath: "auth.username"
+    defaultvalue: "user"
+    values: "user"
+    description: "Auth User Name" 
+secrets:
+  - overwritepath: "auth.password"
+    defaultvalue: "admin123"
+    values: ""
+    description: "Auth Password"   
+    

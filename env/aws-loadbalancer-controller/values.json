@@ -1,0 +1,147 @@
+{
+    "additionalLabels": {},
+    "affinity": {},
+    "autoscaling": {
+        "enabled": false,
+        "maxReplicas": 5,
+        "minReplicas": 1,
+        "targetCPUUtilizationPercentage": 80
+    },
+    "awsApiEndpoints": null,
+    "awsApiThrottle": null,
+    "awsMaxRetries": null,
+    "backendSecurityGroup": null,
+    "cluster": {
+        "dnsDomain": "cluster.local"
+    },
+    "clusterName": null,
+    "clusterSecretsPermissions": {
+        "allowAllSecrets": false
+    },
+    "configureDefaultAffinity": true,
+    "controllerConfig": {
+        "featureGates": {}
+    },
+    "createIngressClassResource": true,
+    "defaultSSLPolicy": null,
+    "defaultTags": {},
+    "defaultTargetType": "instance",
+    "deploymentAnnotations": {},
+    "disableIngressClassAnnotation": null,
+    "disableIngressGroupNameAnnotation": null,
+    "disableRestrictedSecurityGroupRules": null,
+    "dnsPolicy": null,
+    "enableBackendSecurityGroup": null,
+    "enableCertManager": false,
+    "enableEndpointSlices": null,
+    "enablePodReadinessGateInject": null,
+    "enableServiceMutatorWebhook": true,
+    "enableShield": null,
+    "enableWaf": null,
+    "enableWafv2": null,
+    "env": null,
+    "externalManagedTags": [],
+    "extraVolumeMounts": null,
+    "extraVolumes": null,
+    "fullnameOverride": "",
+    "hostNetwork": false,
+    "image": {
+        "pullPolicy": "IfNotPresent",
+        "repository": "public.ecr.aws/eks/aws-load-balancer-controller",
+        "tag": "v2.7.1"
+    },
+    "imagePullSecrets": [],
+    "ingressClass": "alb",
+    "ingressClassConfig": {
+        "default": false
+    },
+    "ingressClassParams": {
+        "create": true,
+        "name": null,
+        "spec": {}
+    },
+    "ingressMaxConcurrentReconciles": null,
+    "keepTLSSecret": true,
+    "livenessProbe": {
+        "failureThreshold": 2,
+        "httpGet": {
+            "path": "/healthz",
+            "port": 61779,
+            "scheme": "HTTP"
+        },
+        "initialDelaySeconds": 30,
+        "timeoutSeconds": 10
+    },
+    "logLevel": null,
+    "metricsBindAddr": "",
+    "nameOverride": "",
+    "nodeSelector": {},
+    "objectSelector": {
+        "matchExpressions": null,
+        "matchLabels": null
+    },
+    "podAnnotations": {},
+    "podDisruptionBudget": {},
+    "podLabels": {},
+    "podSecurityContext": {
+        "fsGroup": 65534
+    },
+    "priorityClassName": "system-cluster-critical",
+    "rbac": {
+        "create": true
+    },
+    "readinessProbe": {
+        "failureThreshold": 2,
+        "httpGet": {
+            "path": "/readyz",
+            "port": 61779,
+            "scheme": "HTTP"
+        },
+        "initialDelaySeconds": 10,
+        "successThreshold": 1,
+        "timeoutSeconds": 10
+    },
+    "region": null,
+    "replicaCount": 2,
+    "resources": {},
+    "revisionHistoryLimit": 10,
+    "securityContext": {
+        "allowPrivilegeEscalation": false,
+        "readOnlyRootFilesystem": true,
+        "runAsNonRoot": true
+    },
+    "serviceAccount": {
+        "annotations": {},
+        "automountServiceAccountToken": true,
+        "create": true,
+        "imagePullSecrets": null,
+        "name": null
+    },
+    "serviceAnnotations": {},
+    "serviceMaxConcurrentReconciles": null,
+    "serviceMonitor": {
+        "additionalLabels": {},
+        "enabled": false,
+        "interval": "1m",
+        "namespace": null
+    },
+    "serviceTargetENISGTags": null,
+    "syncPeriod": null,
+    "targetgroupbindingMaxConcurrentReconciles": null,
+    "targetgroupbindingMaxExponentialBackoffDelay": null,
+    "terminationGracePeriodSeconds": 10,
+    "tolerateNonExistentBackendAction": null,
+    "tolerateNonExistentBackendService": null,
+    "tolerations": [],
+    "topologySpreadConstraints": {},
+    "updateStrategy": {},
+    "vpcId": null,
+    "watchNamespace": null,
+    "webhookBindPort": null,
+    "webhookNamespaceSelectors": null,
+    "webhookTLS": {
+        "caCert": null,
+        "cert": null,
+        "key": null
+    }
+}

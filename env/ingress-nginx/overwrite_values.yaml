@@ -1,0 +1,95 @@
+displayname: "ingress-nginx"
+name: "ingress-nginx"
+version: "4.9.0"
+description: "Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer"
+logoimageid: "e3e91b10-40e0-4f04-b088-85778256ecf7"
+license: "Apache-2.0"
+cluster_type: ["AWS"]
+repository:
+  sourcerefname: "ingress-nginx"
+  url: "https://kubernetes.github.io/ingress-nginx"
+  verified_publisher: false
+values:
+  controller:
+    metrics: 
+      service: 
+        annotations: 
+          prometheus.io/port: "10254"
+          prometheus.io/scrape: "true"
+    service: 
+      annotations: 
+        service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+        service.beta.kubernetes.io/aws-load-balancer-name: "nlb-helm-test-cluster"
+        service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+        service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+valuesfrom:
+  - overwritepath: "controller.replicaCount"
+    defaultvalue: "1"
+    values: "2" 
+    description: "Replica Count"
+    
+  - overwritepath: "controller.minAvailable"
+    defaultvalue: "1"
+    values: "1" 
+    description: "Min Available"
+
+  - overwritepath: "controller.metrics.enabled"
+    defaultvalue: "false"
+    values: "true"
+    description: "metrics enabled"
+
+  - overwritepath: "controller.service.internal.enabled"
+    defaultvalue: "false"
+    values: "true"
+    description: "enable Internal Service"
+
+  - overwritepath: "controller.ingressClassResource.name"
+    defaultvalue: "nginx"
+    values: "nginx-private"
+    description: "Name of the Ingress Class Resource"
+
+  - overwritepath: "controller.resources.requests.cpu"
+    defaultvalue: "100m"
+    values: "100m" 
+    description: "Resource requests CPU"
+
+  - overwritepath: "controller.resources.requests.memory"
+    defaultvalue: "90Mi"
+    values: "250Mi" 
+    description: "Resource requests Memory"
+
+  - overwritepath: "controller.resources.limits.memory"
+    defaultvalue: "2Gi"
+    values: "2Gi" 
+    description: "Resource limits Memory" 
+
+  - overwritepath: "controller.resources.limits.cpu"
+    defaultvalue: "000m"
+    values: "1000m" 
+    description: "Resource limits CPU"
+
+  - overwritepath: "controller.config.client-body-buffer-size"
+    defaultvalue: "8m"
+    values: "8m" 
+    description: "Config Client Body Buffer Size"
+
+  - overwritepath: "controller.autoscaling.enabled"
+    defaultvalue: "false"
+    values: "true"
+    description: "Auto Scaling Enable"
+
+  - overwritepath: "controller.autoscaling.minReplicas"
+    defaultvalue: "1"
+    values: "2"
+    description: "Minimum Replicas"
+
+  - overwritepath: "controller.autoscaling.maxReplicas"
+    defaultvalue: "11"
+    values: "10"
+    description: "Maximum Replicas"
+
+  - overwritepath: "controller.autoscaling.targetCPUUtilizationPercentage"
+    defaultvalue: "50"
+    values: "75"
+    description: "Target CPU Utilization Percentage"
+  

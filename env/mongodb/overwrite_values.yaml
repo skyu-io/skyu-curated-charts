@@ -1,0 +1,43 @@
+displayname: "mongodb"
+name: "mongodb"
+version: "14.13.0"
+description: "MongoDB(R) is a relational open source NoSQL database. Easy to use, it stores data in JSON-like documents. Automated scalability and high-performance. Ideal for developing cloud native applications."
+logoimageid: "d9af69e0-4dd9-4f44-aec5-43684b389518"
+license: "Apache-2.0"
+cluster_type: ["AWS", "Local Clusters"]
+repository:
+  sourcerefname: "bitnami"
+  url: "https://charts.bitnami.com/bitnami"
+  verified_publisher: true
+valuesfrom:
+  - overwritepath: "auth.database"
+    defaultvalue: "my_database"
+    values: ""
+    description: "Name of the Database"   
+
+  - overwritepath: "auth.username"
+    defaultvalue: "admin123"
+    values: ""
+    description: "Name of the Username"   
+  
+  - overwritepath: "auth.rootUser"
+    defaultvalue: "root"
+    values: "root"
+    description: "Name of the Root User" 
+
+  - overwritepath: "replicaCount"
+    defaultvalue: "2"
+    values: "2"
+    description: "Replica Count"   
+
+secrets:
+  - overwritepath: "auth.rootPassword"
+    defaultvalue: "admin123"
+    values: ""
+    description: "Root Password"   
+  
+  - overwritepath: "auth.password"
+    defaultvalue: "admin123"
+    values: ""
+    description: "General Password"   
+

@@ -1,0 +1,42 @@
+displayname: "kube-prometheus-stack"
+name: "kube-prometheus-stack"
+version: "56.21.2"
+description: "kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator."
+logoimageid: "0503add5-3fce-4b63-bbf3-b9f649512a86"
+license: "Apache-2.0"
+cluster_type: ["AWS", "Local Clusters"]
+repository:
+  sourcerefname: "prometheus-community"
+  url: "https://prometheus-community.github.io/helm-charts"
+  verified_publisher: true
+valuesfrom:
+  - overwritepath: "prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues"
+    defaultvalue: "true"
+    values: "false"
+    description: "pod Monitor Selector NilUsesHelmValues" 
+  
+  - overwritepath: "prometheus.prometheusSpec.probeSelectorNilUsesHelmValues"
+    defaultvalue: "true"
+    values: "false"
+    description: "probe Selector NilUsesHelmValues"
+  
+  - overwritepath: "prometheus.prometheusSpec.ruleSelectorNilUsesHelmValues"
+    defaultvalue: "true"
+    values: "false"
+    description: "ruleSelector NilUsesHelmValues"
+  
+  - overwritepath: "prometheus.prometheusSpec.scrapeConfigSelectorNilUsesHelmValues"
+    defaultvalue: "true"
+    values: "false"
+    description: "scrape Config Selector NilUsesHelmValues"
+  
+  - overwritepath: "prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues"
+    defaultvalue: "true"
+    values: "false"
+    description: "service Monitor Selector NilUsesHelmValues"
+  
+  - overwritepath: "thanosRuler.thanosRulerSpec.ruleSelectorNilUsesHelmValues"
+    defaultvalue: "true"
+    values: "false"
+    description: "rule Selector NilUsesHelmValues"
+
