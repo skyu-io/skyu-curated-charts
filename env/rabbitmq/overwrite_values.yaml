@@ -8,35 +8,10 @@ repository:
   sourcerefname: "bitnami"
   url: "https://charts.bitnami.com/bitnami"
   verified_publisher: true
-values:
-  ingress:
-    annotations: {}
-    enabled: false
-    existingSecret: ""
-    extraHosts: []
-    extraPaths: []
-    extraRules: []
-    extraTls: []
-    hostname: "rabbitmq.local"
-    ingressClassName: ""
-    path: "/"
-    pathType: "ImplementationSpecific"
-    secrets: []
-    selfSigned: false
-    tls: false
 valuesfrom:
   - overwritepath: "replicaCount"
     defaultvalue: "1"
     values: "1"
     description: "Replica Count" 
-    
-  - overwritepath: "auth.username"
-    defaultvalue: "user"
-    values: "user"
-    description: "Auth User Name" 
-secrets:
-  - overwritepath: "auth.password"
-    defaultvalue: "admin123"
-    values: ""
-    description: "Auth Password"   
+
     
