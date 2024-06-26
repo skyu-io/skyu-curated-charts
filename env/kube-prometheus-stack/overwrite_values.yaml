@@ -8,14 +8,12 @@ repository:
   sourcerefname: "prometheus-community"
   url: "https://prometheus-community.github.io/helm-charts"
   verified_publisher: true
-values:
-  alertmanager:
-    config: 
-      receivers: 
-        - name: "webhook"
-          webhook_configs: 
-            - url: "https://api.dev.skyu.io/notifications-service/alerts/callback?organizationId=org_6de1b366-9da6-4d55-b363-f5a2c4382016&projectId=project_820bbdd3-f87d-4841-ac41-66114fbfc978"
 valuesfrom:
+  - overwritepath: "alertmanager.alertmanagerSpec.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "Enable Alert Manager"
+
   - overwritepath: "prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues"
     defaultvalue: "true"
     values: "false"
@@ -45,4 +43,5 @@ valuesfrom:
     defaultvalue: "true"
     values: "false"
     description: "rule Selector NilUsesHelmValues"
+
 
