@@ -14,6 +14,11 @@ valuesfrom:
     values: "false"
     description: "Enable Alert Manager"
 
+  - overwritepath: "alertmanager.alertmanagerSpec.replicas"
+    defaultvalue: "2"
+    values: "2"
+    description: "Alert Manager Replicas"
+
   - overwritepath: "prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues"
     defaultvalue: "true"
     values: "false"
