@@ -9,6 +9,16 @@ repository:
   url: "https://prometheus-community.github.io/helm-charts"
   verified_publisher: true
 valuesfrom:
+  - overwritepath: "alertmanager.alertmanagerSpec.enabled"
+    defaultvalue: "true"
+    values: "false"
+    description: "Enable Alert Manager"
+
+  - overwritepath: "alertmanager.alertmanagerSpec.replicas"
+    defaultvalue: "2"
+    values: "2"
+    description: "Alert Manager Replicas"
+
   - overwritepath: "prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues"
     defaultvalue: "true"
     values: "false"
