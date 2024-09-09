@@ -1,0 +1,31 @@
+displayname: "rocketchat"
+name: "rocketchat"
+version: "1.0.4"
+description: "Prepare to take off with the ultimate chat platform, experience the next level of team communications"
+logoimageid: "8ee75f22-3cc9-4cf8-80ce-94a2c0a809bb"
+license: "Apache-2.0"
+repository:
+  sourcerefname: "dteam-helm-charts"
+  url: "https://dteamdev.github.io/charts"
+  verified_publisher: true
+valuesfrom:
+  - overwritepath: "mongodb.auth.username"
+    defaultvalue: "rocketchat"
+    values: ""
+    description: "MongoDB User Name"   
+
+  - overwritepath: "mongodb.auth.database"
+    defaultvalue: "rocketchat"
+    values: ""
+    description: "MongoDB Database"  
+
+secrets:
+  - overwritepath: "mongodb.auth.password"
+    defaultvalue: "admin123"
+    values: ""
+    description: "MongoDB Auth Password"   
+
+  - overwritepath: "mongodb.auth.rootPassword"
+    defaultvalue: "admin123"
+    values: ""
+    description: "MongoDB Root Password"   

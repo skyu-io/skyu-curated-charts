@@ -1,0 +1,98 @@
+{
+    "affinity": {},
+    "externalMongodbOplogUrl": null,
+    "externalMongodbUrl": null,
+    "extraEnv": null,
+    "fullnameOverride": "",
+    "host": "",
+    "image": {
+      "pullPolicy": "IfNotPresent",
+      "repository": "docker.io/rocketchat/rocket.chat",
+      "tag": ""
+    },
+    "ingress": {
+      "annotations": {},
+      "enabled": false,
+      "hosts": [
+        {
+          "host": "chart-example.local",
+          "paths": []
+        }
+      ],
+      "tls": []
+    },
+    "livenessProbe": {
+      "enabled": false,
+      "failureThreshold": 3,
+      "initialDelaySeconds": 60,
+      "path": "/",
+      "periodSeconds": 15,
+      "successThreshold": 1,
+      "timeoutSeconds": 5
+    },
+    "minAvailable": 1,
+    "mongodb": {
+      "arbiter": {
+        "enabled": false
+      },
+      "architecture": "replicaset",
+      "auth": {
+        "database": "rocketchat",
+        "password": "",
+        "rootPassword": "",
+        "username": "rocketchat"
+      },
+      "enabled": true,
+      "persistence": {
+        "accessMode": "ReadWriteOnce",
+        "enabled": true,
+        "size": "8Gi"
+      },
+      "replicaCount": 0
+    },
+    "nameOverride": "",
+    "nodeSelector": {},
+    "persistence": {
+      "accessMode": "ReadWriteOnce",
+      "enabled": true,
+      "size": "8Gi"
+    },
+    "podAnnotations": {},
+    "podAntiAffinity": "",
+    "podAntiAffinityTopologyKey": "kubernetes.io/hostname",
+    "podSecurityContext": {
+      "fsGroup": 999
+    },
+    "readinessProbe": {
+      "enabled": false,
+      "failureThreshold": 3,
+      "initialDelaySeconds": 10,
+      "path": "/",
+      "periodSeconds": 15,
+      "successThreshold": 1,
+      "timeoutSeconds": 5
+    },
+    "replicaCount": 1,
+    "resources": {},
+    "securityContext": {
+      "runAsNonRoot": true,
+      "runAsUser": 999
+    },
+    "service": {
+      "port": 80,
+      "type": "ClusterIP"
+    },
+    "serviceAccount": {
+      "annotations": {},
+      "create": true,
+      "name": ""
+    },
+    "smtp": {
+      "enabled": false,
+      "host": null,
+      "password": null,
+      "port": 587,
+      "username": null
+    },
+    "tolerations": []
+  }
