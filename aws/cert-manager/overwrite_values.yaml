@@ -57,6 +57,6 @@ valuesfrom:
   - overwritepath: "crds.enabled"
     defaultvalue: "false"
     values: "true"
-    description: "crds enabled" 
+    description: "Enable CRDS" 
   
  
