@@ -1,6 +1,6 @@
 displayname: "cert-manager"
 name: "cert-manager"
-version: "1.14.3"
+version: "1.16.2"
 description: "A Helm chart for cert-manager"
 logoimageid: "6d75ecff-a328-495b-a7fc-12cd84499974"
 license: "Apache-2.0"
@@ -53,5 +53,10 @@ valuesfrom:
     defaultvalue: "32Mi"
     values: "32Mi"
     description: "cert-manager controller pod Memory"  
+
+  - overwritepath: "crds.enabled"
+    defaultvalue: "false"
+    values: "true"
+    description: "crds enabled" 
   
  
