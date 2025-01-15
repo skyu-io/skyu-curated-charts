@@ -1,0 +1,35 @@
+displayname: "kubecost"
+name: "kubecost"
+version: "2.4"
+description: "Kubecost Helm chart for Kubernetes"
+logoimageid: "d9af69e0-4dd9-4f44-aec5-43684b389518"
+license: "Apache-2.0"
+repository:
+  sourcerefname: "kubecost"
+  url: "https://kubecost.github.io/cost-analyzer/"
+  verified_publisher: true
+valuesfrom:
+  - overwritepath: "kubecostToken"
+    defaultvalue: "aGVsbUBrdWJlY29zdC5jb20=xm343yadf98"
+    values: "aGVsbUBrdWJlY29zdC5jb20=xm343yadf98"
+    description: "Kubecost Token" 
+
+  - overwritepath: "persistentVolume.size"
+    defaultvalue: "32Gi"
+    values: "32Gi"
+    description: "Persistent Volume Size"
+
+  - overwritepath: "kubecostFrontend.enabled"
+    defaultvalue: "true"
+    values: "true"
+    description: "Enable Kubecost Frontend"
+
+  - overwritepath: "forecasting.enabled"
+    defaultvalue: "true"
+    values: "ture"
+    description: "Enable Forecasting"
+
+  - overwritepath: "prometheus.alertmanager.enabled"
+    defaultvalue: "false"
+    values: "false"
+    description: "Enable Prometheus Alert Manager"
