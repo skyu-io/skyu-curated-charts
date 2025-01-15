@@ -33,5 +33,3 @@ valuesfrom:
     defaultvalue: "false"
     values: "false"
     description: "Enable Prometheus Alert Manager"
-
- 
