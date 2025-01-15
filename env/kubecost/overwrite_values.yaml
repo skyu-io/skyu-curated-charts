@@ -29,17 +29,9 @@ valuesfrom:
     values: "ture"
     description: "Enable Forecasting"
 
-  - overwritepath: "global.savedReports.enabled"
-    defaultvalue: "false"
-    values: "false"
-    description: "Enable Kubecost Saved Reports"
-
   - overwritepath: "prometheus.alertmanager.enabled"
     defaultvalue: "false"
     values: "false"
     description: "Enable Prometheus Alert Manager"
 
-  - overwritepath: "global.notifications.alertmanager.enabled"
-    defaultvalue: "false"
-    values: "false"
-    description: "Enable Kubecost Notifications"
+ 
