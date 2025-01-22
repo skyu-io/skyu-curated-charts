@@ -6,7 +6,7 @@ logoimageid: "d9af69e0-4dd9-4f44-aec5-43684b389518"
 license: "Apache-2.0"
 repository:
   sourcerefname: "kubecost"
-  url: "https://kubecost.github.io/cost-analyzer"
+  url: "https://kubecost.github.io/cost-analyzer/cost-analyzer"
   verified_publisher: true
 valuesfrom:
   - overwritepath: "kubecostToken"
