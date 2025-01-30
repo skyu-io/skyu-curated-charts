@@ -8,6 +8,27 @@ repository:
   sourcerefname: "prometheus-community"
   url: "https://prometheus-community.github.io/helm-charts"
   verified_publisher: true
+values:
+  prometheus:
+    prometheusSpec:    
+      storageSpec: 
+        volumeClaimTemplate:
+          spec:
+            storageClassName: gp2
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 50Gi
+  alertmanager:
+    alertmanagerSpec:
+      storage: 
+        volumeClaimTemplate:
+          spec:
+            storageClassName: gp2
+            accessModes: ["ReadWriteOnce"]
+            resources:
+                requests:
+                  storage: 10Gi
 valuesfrom:
   - overwritepath: "alertmanager.alertmanagerSpec.enabled"
     defaultvalue: "true"
