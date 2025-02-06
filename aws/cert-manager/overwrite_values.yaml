@@ -14,11 +14,6 @@ valuesfrom:
     values: "1"
     description: "Replica Count"   
 
-  - overwritepath: "cainjector.enabled"
-    defaultvalue: "true"
-    values: "true"
-    description: "Enable CA Injector"  
-
   - overwritepath: "prometheus.enabled"
     defaultvalue: "true"
     values: "true"
