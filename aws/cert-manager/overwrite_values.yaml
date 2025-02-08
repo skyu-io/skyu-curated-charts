@@ -1,6 +1,6 @@
 displayname: "cert-manager"
 name: "cert-manager"
-version: "1.16.2"
+version: "1.17.0"
 description: "A Helm chart for cert-manager"
 logoimageid: "6d75ecff-a328-495b-a7fc-12cd84499974"
 license: "Apache-2.0"
@@ -19,39 +19,9 @@ valuesfrom:
     values: "true"
     description: "Enable Prometheus"
 
-  - overwritepath: "webhook.timeoutSeconds"
-    defaultvalue: "30"
-    values: "30"
-    description: "Webhook Timeout Seconds"  
-  
-  - overwritepath: "global.leaderElection.namespace"
-    defaultvalue: "kube-system"
-    values: "kube-system"
-    description: "Global Leader Election Namespace" 
-
-  - overwritepath: "global.logLevel"
-    defaultvalue: "2"
-    values: "2"
-    description: "Global LogLevel"   
-
-  - overwritepath: "global.podSecurityPolicy.enabled"
-    defaultvalue: "false"
-    values: "false"
-    description: "Enable Global Pod Security Policy"      
-
-  - overwritepath: "resources.requests.cpu"
-    defaultvalue: "10m"
-    values: "10m"
-    description: "cert-manager controller pod CPU"   
-
-  - overwritepath: "resources.requests.memory"
-    defaultvalue: "32Mi"
-    values: "32Mi"
-    description: "cert-manager controller pod Memory"  
-
   - overwritepath: "crds.enabled"
     defaultvalue: "false"
     values: "true"
-    description: "Enable CRDS" 
+    description: "Install CRDS" 
   
  
