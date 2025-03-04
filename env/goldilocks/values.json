@@ -1,0 +1,146 @@
+{
+    "uninstallVPA": false,
+    "vpa": {
+      "enabled": true,
+      "updater": {
+        "enabled": true
+      }
+    },
+    "metrics-server": {
+      "enabled": false,
+      "apiService": {
+        "create": true
+      }
+    },
+    "image": {
+      "repository": "us-docker.pkg.dev/fairwinds-ops/oss/goldilocks",
+      "tag": "v4.13.0",
+      "pullPolicy": "Always"
+    },
+    "imagePullSecrets": [],
+    "nameOverride": "",
+    "fullnameOverride": "",
+    "controller": {
+      "enabled": true,
+      "revisionHistoryLimit": 10,
+      "rbac": {
+        "create": true,
+        "enableArgoproj": true,
+        "extraRules": [],
+        "extraClusterRoleBindings": []
+      },
+      "serviceAccount": {
+        "create": true,
+        "name": null
+      },
+      "flags": {},
+      "logVerbosity": "2",
+      "nodeSelector": {},
+      "tolerations": [],
+      "affinity": {},
+      "topologySpreadConstraints": [],
+      "resources": {
+        "limits": {},
+        "requests": {
+          "cpu": "25m",
+          "memory": "256Mi"
+        }
+      },
+      "podSecurityContext": {
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "securityContext": {
+        "readOnlyRootFilesystem": true,
+        "allowPrivilegeEscalation": false,
+        "runAsNonRoot": true,
+        "runAsUser": 10324,
+        "capabilities": {
+          "drop": [
+            "ALL"
+          ]
+        }
+      },
+      "deployment": {
+        "extraVolumeMounts": [],
+        "extraVolumes": [],
+        "annotations": {},
+        "additionalLabels": {},
+        "podAnnotations": {}
+      }
+    },
+    "dashboard": {
+      "basePath": null,
+      "enabled": false,
+      "revisionHistoryLimit": 10,
+      "replicaCount": 2,
+      "service": {
+        "type": "ClusterIP",
+        "port": 80,
+        "annotations": {}
+      },
+      "flags": {},
+      "logVerbosity": "2",
+      "excludeContainers": "linkerd-proxy,istio-proxy",
+      "rbac": {
+        "create": true,
+        "enableArgoproj": true
+      },
+      "serviceAccount": {
+        "create": true,
+        "name": null
+      },
+      "deployment": {
+        "annotations": {},
+        "additionalLabels": {},
+        "extraVolumeMounts": [],
+        "extraVolumes": [],
+        "podAnnotations": {}
+      },
+      "ingress": {
+        "enabled": false,
+        "ingressClassName": null,
+        "annotations": {},
+        "hosts": [
+          {
+            "host": "chart-example.local",
+            "paths": [
+              {
+                "path": "/",
+                "type": "ImplementationSpecific"
+              }
+            ]
+          }
+        ],
+        "tls": []
+      },
+      "resources": {
+        "limits": {},
+        "requests": {
+          "cpu": "25m",
+          "memory": "256Mi"
+        }
+      },
+      "podSecurityContext": {
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "securityContext": {
+        "readOnlyRootFilesystem": true,
+        "allowPrivilegeEscalation": false,
+        "runAsNonRoot": true,
+        "runAsUser": 10324,
+        "capabilities": {
+          "drop": [
+            "ALL"
+          ]
+        }
+      },
+      "nodeSelector": {},
+      "tolerations": [],
+      "affinity": {},
+      "topologySpreadConstraints": []
+    }
+  }
