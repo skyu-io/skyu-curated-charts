@@ -2,7 +2,7 @@ displayname: "goldilocks"
 name: "goldilocks"
 version: "9.0.0"
 description: "Helm chart for the Fairwinds Goldilocks Project"
-logoimageid: "b4fed1a7-6c8f-4945-b99d-096efa3e4116"
+logoimageid: "d9af69e0-4dd9-4f44-aec5-43684b389518"
 license: "Apache-2.0"
 repository:
   sourcerefname: "fairwinds-stable"
