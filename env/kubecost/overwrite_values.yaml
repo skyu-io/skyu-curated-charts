@@ -14,11 +14,6 @@ valuesfrom:
     values: "aGVsbUBrdWJlY29zdC5jb20=xm343yadf98"
     description: "Kubecost Token" 
 
-  - overwritepath: "persistentVolume.size"
-    defaultvalue: "32Gi"
-    values: "32Gi"
-    description: "Persistent Volume Size"
-
   - overwritepath: "kubecostFrontend.enabled"
     defaultvalue: "true"
     values: "true"
