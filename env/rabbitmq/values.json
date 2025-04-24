@@ -110,7 +110,7 @@
     },
     "imagePullSecrets": [],
     "imageRegistry": "",
-    "storageClass": "gp2"
+    "storageClass": ""
   },
   "hostAliases": [],
   "image": {
