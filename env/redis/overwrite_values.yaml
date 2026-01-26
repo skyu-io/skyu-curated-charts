@@ -11,40 +11,40 @@ repository:
 valuesfrom:
   - overwritepath: "master.containerPorts.redis"
     defaultvalue: "6379"
-    values: ""
+    values: "6379"
     description: "Redis master container port"
 
   - overwritepath: "image.registry"
     defaultvalue: "public.ecr.aws"
-    values: ""
+    values: "public.ecr.aws"
     description: "Redis image registry"
 
   - overwritepath: "sentinel.image.registry"
     defaultvalue: "public.ecr.aws"
-    values: ""
+    values: "public.ecr.aws"
     description: "Sentinel image registry"
 
   - overwritepath: "metrics.image.registry"
     defaultvalue: "public.ecr.aws"
-    values: ""
+    values: "public.ecr.aws"
     description: "Metrics image registry"
 
   - overwritepath: "volumePermissions.image.registry"
     defaultvalue: "public.ecr.aws"
-    values: ""
+    values: "public.ecr.aws"
     description: "VolumePermissions image registry"
 
   - overwritepath: "sysctl.image.registry"
     defaultvalue: "public.ecr.aws"
-    values: ""
+    values: "public.ecr.aws"
     description: "Sysctl image registry"
 
   - overwritepath: "master.service.type"
     defaultvalue: "ClusterIP"
-    values: ""
+    values: "ClusterIP"
     description: "Redis master service type"
 
   - overwritepath: "master.service.ports.redis"
     defaultvalue: "6379"
-    values: ""
+    values: "6379"
     description: "Redis master service port"
