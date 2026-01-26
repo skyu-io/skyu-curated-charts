@@ -14,6 +14,31 @@ valuesfrom:
     values: ""
     description: "Redis master container port"
 
+  - overwritepath: "image.registry"
+    defaultvalue: "public.ecr.aws"
+    values: "public.ecr.aws"
+    description: "Redis image registry"
+
+  - overwritepath: "sentinel.image.registry"
+    defaultvalue: "public.ecr.aws"
+    values: "public.ecr.aws"
+    description: "Sentinel image registry"
+
+  - overwritepath: "metrics.image.registry"
+    defaultvalue: "public.ecr.aws"
+    values: "public.ecr.aws"
+    description: "Metrics image registry"
+
+  - overwritepath: "volumePermissions.image.registry"
+    defaultvalue: "public.ecr.aws"
+    values: "public.ecr.aws"
+    description: "VolumePermissions image registry"
+
+  - overwritepath: "sysctl.image.registry"
+    defaultvalue: "public.ecr.aws"
+    values: "public.ecr.aws"
+    description: "Sysctl image registry"
+
   - overwritepath: "master.service.type"
     defaultvalue: "ClusterIP"
     values: ""
