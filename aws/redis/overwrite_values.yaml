@@ -9,22 +9,22 @@ repository:
   url: "https://charts.bitnami.com/bitnami"
   verified_publisher: true
 valuesfrom:
-  - overwritepath: "containerPorts.http"
-    defaultvalue: "8080"
+  - overwritepath: "master.containerPorts.redis"
+    defaultvalue: "6379"
     values: ""
-    description: "http container port"   
+    description: "Redis master container port"
 
-  - overwritepath: "service.type"
-    defaultvalue: "LoadBalancer"
+  - overwritepath: "master.service.type"
+    defaultvalue: "ClusterIP"
     values: ""
-    description: "Service Type"  
+    description: "Redis master service type"
 
-  - overwritepath: "service.ports.http"
-    defaultvalue: "80"
+  - overwritepath: "master.service.ports.redis"
+    defaultvalue: "6379"
     values: ""
-    description: "Service http port"  
-  
-  - overwritepath: "service.ports.https"
-    defaultvalue: "443"
-    values: ""
-    description: "Service https port"
+    description: "Redis master service port"
+
+  - overwritepath: "architecture"
+    defaultvalue: "standalone"
+    values: "standalone,replication"
+    description: "Redis architecture mode"
