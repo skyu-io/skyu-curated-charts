@@ -23,8 +23,3 @@ valuesfrom:
     defaultvalue: "6379"
     values: ""
     description: "Redis master service port"
-
-  - overwritepath: "architecture"
-    defaultvalue: "standalone"
-    values: "standalone,replication"
-    description: "Redis architecture mode"
